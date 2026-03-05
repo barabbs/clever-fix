@@ -25,10 +25,10 @@ def problem_spec
 let spec (result: Nat) :=
   (n = 0 → result = 0) ∧
   (0 < n → result = implementation (n - 1) →
-    (n % 11 ≠  0 ∧  n % 13 ≠  0) ∨ n.repr.count '7' = 0) ∧
+    ((n - 1) % 11 ≠  0 ∧  (n - 1) % 13 ≠  0) ∨ (n - 1).repr.count '7' = 0) ∧
   (0 < n → result ≠ implementation (n - 1) →
-    (n % 11 = 0 ∨  n % 13 = 0) ∧
-    result - implementation (n - 1) = n.repr.count '7')
+    ((n - 1) % 11 = 0 ∨  (n - 1) % 13 = 0) ∧
+    result - implementation (n - 1) = (n - 1).repr.count '7')
 -- program termination
 ∃ result, implementation n = result ∧
 spec result

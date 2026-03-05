@@ -27,9 +27,10 @@ def problem_spec
 let spec (result: Int) :=
 (result ∣ a) ∧
 (result ∣ b) ∧
+(result ≥ 0) ∧
 (∀ (d': Int),
-(d' > 0) → (d' ∣ a) → (d' ∣ b) →
-d' ≤ result);
+(d' ∣ a) → (d' ∣ b) →
+d' ∣ result);
 -- program termination
 ∃ result, implementation a b = result ∧
 spec result

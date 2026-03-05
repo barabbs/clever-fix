@@ -27,7 +27,7 @@ def problem_spec
 -- spec
 let spec (result : Bool) :=
 let is_prime (n: Nat) : Prop :=
-  ¬ (∃ k, 2 ≤ k ∧ k < n ∧ n % k = 0);
+  2 ≤ n ∧ ¬ (∃ k, 2 ≤ k ∧ k < n ∧ n % k = 0);
   result ↔ is_prime s.length
 -- program termination
 ∃ result,

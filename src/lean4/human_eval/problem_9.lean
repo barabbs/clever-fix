@@ -54,14 +54,17 @@ sorry
 def implementation (numbers: List Int) : List Int :=
 -- end_def implementation_signature
 -- start_def implementation
-let rec rolling_max (numbers: List Int) (results: List Int) (acc: Int) : List Int :=
-  match numbers with
-  | [] => results
-  | n :: ns =>
-    let new_acc := max acc n
-    let new_results := results ++ [new_acc]
-    rolling_max ns new_results new_acc
-rolling_max numbers [] 0
+match numbers with
+| [] => []
+| x :: xs =>
+  let rec rolling_max (nums: List Int) (results: List Int) (acc: Int) : List Int :=
+    match nums with
+    | [] => results
+    | n :: ns =>
+      let new_acc := max acc n
+      let new_results := results ++ [new_acc]
+      rolling_max ns new_results new_acc
+  rolling_max xs [x] x
 -- end_def implementation
 
 -- Uncomment the following test cases after implementing the function

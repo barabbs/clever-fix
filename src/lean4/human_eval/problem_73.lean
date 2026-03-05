@@ -25,10 +25,16 @@ def problem_spec
 (arr: List Int) :=
 -- spec
 let spec (result : Int) :=
-  let swaps_done (arr1: List Int) (arr2: List Int) :=
-    ((List.finRange (arr1.length)).filter (fun idx => arr1[idx]? ≠ arr2[idx]?)).length/2
-  ∀ palin_perm, (List.Perm arr palin_perm) ∧ (List.Palindrome palin_perm) →
-    result ≤ (swaps_done arr palin_perm)
+  let changes_needed (arr1: List Int) (arr2: List Int) :=
+    ((List.finRange (arr1.length)).filter (fun idx => arr1[idx]? ≠ arr2[idx]?)).length
+  (∃ palin : List Int,
+    palin.length = arr.length ∧
+    List.Palindrome palin ∧
+    result = changes_needed arr palin) ∧
+  (∀ palin : List Int,
+    palin.length = arr.length →
+    List.Palindrome palin →
+    result ≤ changes_needed arr palin)
 -- program termination
 ∃ result, implementation arr = result ∧
 spec result

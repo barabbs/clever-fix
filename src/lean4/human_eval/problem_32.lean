@@ -30,7 +30,7 @@ let spec (result: Rat) :=
   xs.length ≥ 1 → xs.length % 2 = 0 →
   ∀ poly : Polynomial Rat,
     poly.degree = some (xs.length - 1) →
-    (∀ i, i ≤ xs.length - 1 → poly.coeff i = xs.get! i) →
+    (∀ i, i ≤ xs.length - 1 → poly.coeff i = xs[i]!) →
     |poly.eval result| ≤ eps;
 -- program termination
 ∃ result,
@@ -64,20 +64,28 @@ def implementation (xs: List Rat) : Rat :=
 -- end_def implementation_signature
 -- start_def implementation
 let rec poly (xs: List Rat) (x: Rat) := xs.reverse.foldl (λ acc a => acc * x + a) 0;
-let rec poly' (xs: List Rat) (x: Rat) := (xs.drop 1).reverse.foldl (λ acc a => acc * x + a) 0;
 let rec eps := (1: Rat) / 1000000;
-let rec find_zero (xs: List Rat) (guess: Rat) (fuel: Nat) :=
-let eval := poly xs guess;
-let eval' := poly' xs guess;
-if eval ≤ eps ∨ fuel = 0 then (guess, fuel)
-else
-let guess' := (eval' * guess - eval) / eval';
-find_zero xs guess' (fuel - 1);
-(find_zero xs 1.0 1000000).1
--- Note: The above implementation can fail to converge in some cases. For example,
--- on the test case [-6, 11, -6, 1] as the derivative of the polynomial
--- can be zero at if the guess is 0. In such cases, the implementation will not
--- converge. The implementation can be improved by using a better guess.
+let lc := |xs.getLast!|;
+let initBound : Rat := if lc = 0 then 1
+  else 1 + xs.dropLast.foldl (fun acc a => acc + |a|) 0 / lc;
+let rec findBound (xs: List Rat) (b: Rat) (fuel: Nat) : Rat :=
+  match fuel with
+  | 0 => b
+  | fuel' + 1 =>
+    if poly xs b * poly xs (-b) ≤ 0 then b
+    else findBound xs (b * 2) fuel';
+let rec bisect (xs: List Rat) (lo hi: Rat) (fuel: Nat) : Rat :=
+  match fuel with
+  | 0 => (lo + hi) / 2
+  | fuel' + 1 =>
+    let mid := (lo + hi) / 2;
+    if |poly xs mid| ≤ eps then mid
+    else if poly xs lo * poly xs mid ≤ 0 then bisect xs lo mid fuel'
+    else bisect xs mid hi fuel';
+let bound := findBound xs initBound 100;
+let coeffBits := xs.foldl (fun acc a => acc + a.num.natAbs.size + a.den.size) 0;
+let fuel := 1000000 + coeffBits * (xs.length + 1) * 40;
+bisect xs (-bound) bound fuel
 -- end_def implementation
 
 -- Uncomment the following test cases after implementing the function

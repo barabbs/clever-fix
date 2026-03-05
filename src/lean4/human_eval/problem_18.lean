@@ -29,6 +29,9 @@ def problem_spec
 (string substring: String) :=
 -- spec
 let spec (result: Nat) :=
+(substring.length = 0 → result = string.length)
+∧
+(substring.length ≠ 0 →
 (string.length < substring.length → result = 0)
 ∧
 (string.length = substring.length →
@@ -36,9 +39,9 @@ let spec (result: Nat) :=
 (substring ≠ string ↔ result = 0)))
 ∧
 (substring.length < string.length  →
-let subtring_start_idx := {i: Nat | i ≤ string.length - substring.length};
-let substring_occurrences := {i ∈ subtring_start_idx | (string.take (i + substring.length)).drop i = substring };
-result = substring_occurrences.toFinset.card);
+let subtring_start_idx := {i: Nat | i < string.length - substring.length + 1};
+let substring_occurrences := {i ∈ subtring_start_idx | (string.drop i).take substring.length = substring };
+result = substring_occurrences.toFinset.card));
 -- program termination
 ∃ result, implementation string substring = result ∧
 spec result

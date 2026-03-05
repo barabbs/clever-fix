@@ -28,7 +28,7 @@ def problem_spec
 -- spec
 let spec (result: Int) :=
   let dig_sum (x: Int): Int :=
-    let digs := x.natAbs.digits 10;
+    let digs := Nat.digits 10 x.natAbs;
     if x >= 0 then
       (List.map (fun t => (t: Int)) digs).sum
     else
