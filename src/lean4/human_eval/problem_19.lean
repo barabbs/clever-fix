@@ -39,7 +39,7 @@ let rec is_sorted_asc_helper : List Int → Bool → Bool := fun numbers is_sort
   | [] => is_sorted
   | [x] => is_sorted
   | x::y::rest => if x <= y then is_sorted_asc_helper (y::rest) true else false;
-is_sorted_asc_helper numbers false;
+is_sorted_asc_helper numbers true;
 let spec (result: String) :=
 let result_split := result.splitOn " ";
 let numbers_split := numbers.splitOn " ";
@@ -114,7 +114,7 @@ let numbers_mapped_to_numbers := numbers_split.map word_to_number_map;
 let sorted_numbers := numbers_mapped_to_numbers.mergeSort;
 let sorted_numbers_mapped_to_words := sorted_numbers.map number_to_word_map;
 let join: List String → String := fun words =>
-  let head := words.get! 0;
+  let head := words.head!;
   let tail := words.drop 1;
   tail.foldl (fun acc word => acc ++ " " ++ word) head;
 join sorted_numbers_mapped_to_words
