@@ -21,11 +21,12 @@ def problem_spec
 -- inputs
 (s: String) :=
 -- spec
-let isDelim c := c = ',' ∨ c = ' '
 let spec (result: List String) :=
-  (result = [] ↔ (∀ x ∈ s.toList, isDelim x) ∨ s = "") ∧
-  (∀ w ∈ result, w ≠ "" ∧ ∀ c ∈ w.toList, ¬isDelim c) ∧
-  (s.toList.filter (fun c => ¬isDelim c) = (result.map String.toList).flatten)
+  let chars := s.toList;
+  let trimmed := String.mk (chars.dropWhile (fun c => c = ' ' ∨ c = ','));
+  let first := trimmed.takeWhile (fun c => c ≠ ',' ∧ c ≠ ' ');
+  (result = [] ↔ (∀ x ∈ chars, x = ' ' ∨ x = ',') ∨ s = "") ∧
+  (result ≠ [] ↔ result = [first] ++ (implementation (trimmed.drop (first.length + 1))))
 
 -- program termination
 ∃ result, implementation s = result ∧
