@@ -36,7 +36,7 @@ spec result
 -- start_def generated_spec
 def generated_spec
 -- function signature
-(implementation: String → List Int)
+(implementation: String → List Nat)
 -- inputs
 (paren_string: String) : Prop :=
 --end_def generated_spec
