@@ -39,8 +39,8 @@ let spec (result: Nat) :=
 (substring ≠ string ↔ result = 0)))
 ∧
 (substring.length < string.length  →
-let subtring_start_idx := {i: Nat | i < string.length - substring.length + 1};
-let substring_occurrences := {i ∈ subtring_start_idx | (string.drop i).take substring.length = substring };
+let substring_start_idx := {i: Nat | i < string.length - substring.length + 1};
+let substring_occurrences := {i ∈ substring_start_idx | (string.drop i).take substring.length = substring };
 result = substring_occurrences.toFinset.card));
 -- program termination
 ∃ result, implementation string substring = result ∧
