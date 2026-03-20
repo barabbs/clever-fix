@@ -86,6 +86,7 @@ simp [implementation]
 apply Iff.intro
 intro h_is_prime
 simp [Nat.prime_def] at h_is_prime
+refine ⟨h_is_prime.1, ?_⟩
 intro x h_2_le_x h_x_lt_s_len
 have h_p' := h_is_prime.2 x
 by_contra h_s_len_mod_x
