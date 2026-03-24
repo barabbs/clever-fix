@@ -91,7 +91,7 @@ bisect xs (-bound) bound fuel
 -- Uncomment the following test cases after implementing the function
 -- start_def test_cases
 #test |implementation [1, 2] - (-1/2)| ≤ 1/1000000
-#test |implementation [-6, 11, -6, 1] - 3| ≤ 1/1000000
+#test |implementation [-6, 11, -6, 1] - 1| ≤ 1/1000000 ∨ |implementation [-6, 11, -6, 1] - 2| ≤ 1/1000000 ∨ |implementation [-6, 11, -6, 1] - 3| ≤ 1/1000000
 -- end_def test_cases
 
 -- start_def correctness_definition
