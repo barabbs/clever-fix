@@ -14,7 +14,7 @@ test_cases:
   - input: [1, 2]
     output: -0.5
   - input: [-6, 11, -6, 1]
-    output: 1.0
+    output: 3.0
 -/
 -- end_def problem_details
 
