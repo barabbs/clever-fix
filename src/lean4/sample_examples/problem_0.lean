@@ -61,17 +61,16 @@ sorry
 def implementation (paren_string: String) : Bool :=
 -- end_def implementation_signature
 -- start_def implementation
-let rec loop (s_chars: List Char) (num_open: Int): Int :=
+let rec loop (s_chars: List Char) (num_open: Nat): Option Nat :=
   match s_chars with
-  | [] => num_open
+  | [] => some num_open
   | '(' :: tail => loop tail (num_open + 1)
   | ')' :: tail =>
-    if num_open > 0 then
-      loop tail (num_open - 1)
-    else
-      loop tail num_open
+    match num_open with
+    | 0 => none  -- More ')' than '(' encountered
+    | n + 1 => loop tail n
   | _ :: tail => loop tail num_open
-(loop paren_string.toList 0) = 0
+(loop paren_string.toList 0) = some 0
 -- end_def implementation
 
 -- Uncomment the following test cases after implementing the function

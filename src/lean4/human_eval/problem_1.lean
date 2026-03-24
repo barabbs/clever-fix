@@ -26,6 +26,7 @@ def problem_spec
 -- spec
 let paren_string_filtered := (paren_string.toList.filter (fun c => c == '(' ∨  c == ')')).asString;
 let spec (result_list: List String) :=
+balanced_paren_non_computable paren_string_filtered '(' ')' →
 -- concat of result is input_filtered
 (result_list.foldl (· ++ ·) "" = paren_string_filtered) ∧
 -- each item in result is balanced and has only one group

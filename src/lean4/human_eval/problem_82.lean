@@ -27,7 +27,7 @@ def problem_spec
 -- spec
 let spec (result : Bool) :=
 let is_prime (n: Nat) : Prop :=
-  ¬ (∃ k, 2 ≤ k ∧ k < n ∧ n % k = 0);
+  2 ≤ n ∧ ¬ (∃ k, 2 ≤ k ∧ k < n ∧ n % k = 0);
   result ↔ is_prime s.length
 -- program termination
 ∃ result,
@@ -86,6 +86,7 @@ simp [implementation]
 apply Iff.intro
 intro h_is_prime
 simp [Nat.prime_def] at h_is_prime
+refine ⟨h_is_prime.1, ?_⟩
 intro x h_2_le_x h_x_lt_s_len
 have h_p' := h_is_prime.2 x
 by_contra h_s_len_mod_x

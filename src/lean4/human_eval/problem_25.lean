@@ -61,12 +61,14 @@ def implementation (n: Nat) : List Nat :=
 -- end_def implementation_signature
 -- start_def implementation
 Id.run do
-let mut result := []
-for num in List.range' 2 n.sqrt do
-  let mut n' := n
+let mut result : List Nat := []
+let mut n' := n
+for num in List.range' 2 (n.sqrt + 1) do
   while n' % num = 0 do
     n' := n' / num
     result := result ++ [num]
+if n' > 1 then
+  result := result ++ [n']
 result
 -- end_def implementation
 

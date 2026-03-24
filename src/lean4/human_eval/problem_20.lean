@@ -28,8 +28,8 @@ let abs_diff := |larger - smaller|;
 smaller ≤ larger ∧
 smaller ∈ numbers ∧
 larger ∈ numbers ∧
-(∀ x y, x ∈ numbers → y ∈ numbers →  abs_diff ≤ |x - y|) ∧
-(smaller = larger → 1 ≤ (numbers.filter (fun z => z = smaller)).length));
+(∀ x y, x ∈ numbers → y ∈ numbers → x ≠ y → abs_diff ≤ |x - y|) ∧
+(smaller = larger → 2 ≤ (numbers.filter (fun z => z = smaller)).length));
 -- program termination
 ∃ result, implementation numbers = result ∧
 spec result
@@ -62,13 +62,13 @@ def implementation (numbers: List Rat): (Rat × Rat) :=
 -- start_def implementation
 let n := numbers.length;
 let sorted_numbers := numbers.mergeSort;
-let min_diff := sorted_numbers.get! 1 - sorted_numbers.get! 0;
-let min_pair := (sorted_numbers.get! 0, sorted_numbers.get! 1);
+let min_diff := sorted_numbers[1]! - sorted_numbers[0]!;
+let min_pair := (sorted_numbers[0]!, sorted_numbers[1]!);
 let rec loop (i: Nat) (min_diff: Rat) (min_pair: (Rat × Rat)): (Rat × Rat) :=
   if i < n - 1 then
-    let diff := sorted_numbers.get! (i + 1) - sorted_numbers.get! i;
+    let diff := sorted_numbers[i + 1]! - sorted_numbers[i]!;
     if diff < min_diff then
-      loop (i + 1) diff (sorted_numbers.get! i, sorted_numbers.get! (i + 1))
+      loop (i + 1) diff (sorted_numbers[i]!, sorted_numbers[i + 1]!)
     else
       loop (i + 1) min_diff min_pair
   else

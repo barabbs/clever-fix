@@ -23,9 +23,10 @@ def problem_spec
 -- spec
 let spec (result: List String) :=
   let chars := s.toList;
-  let first := s.takeWhile (fun c => c ≠ ',' ∧ c ≠ ' ');
+  let trimmed := String.mk (chars.dropWhile (fun c => c = ' ' ∨ c = ','));
+  let first := trimmed.takeWhile (fun c => c ≠ ',' ∧ c ≠ ' ');
   (result = [] ↔ (∀ x ∈ chars, x = ' ' ∨ x = ',') ∨ s = "") ∧
-  (result ≠ [] ↔ result = [first] ++ (implementation (s.drop (first.length + 1))))
+  (result ≠ [] ↔ result = [first] ++ (implementation (trimmed.drop (first.length + 1))))
 
 -- program termination
 ∃ result, implementation s = result ∧
@@ -57,7 +58,8 @@ sorry
 def implementation (s: String) : List String :=
 -- end_def implementation_signature
 -- start_def implementation
-  List.map (fun s => (s.toList.filter (fun c => c != ',')).asString) ((s.splitOn).filter (fun s => s != "" ∧ s != ","))
+  let normalized := String.mk (s.toList.map (fun c => if c = ',' then ' ' else c))
+  normalized.split (· == ' ') |>.filter (fun w => w ≠ "")
 -- end_def implementation
 
 -- Uncomment the following test cases after implementing the function
