@@ -9,7 +9,7 @@ docstring: |
 test_cases:
   - input: [1, 3, 2, 0]
     expected_output: 10
-  - input: [-1. -2, 0]
+  - input: [-1, -2, 0]
     expected_output: 0
   - input: [9, -2]
     expected_output: 81
