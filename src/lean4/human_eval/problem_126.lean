@@ -15,7 +15,7 @@ test_cases:
   - input: [1, 3, 2, 4, 5]
     expected_output: False
   - input: [1, 2, 3, 4, 5, 6]
-    expected_outupt: True
+    expected_output: True
   - input: [1, 2, 3, 4, 5, 6, 7]
     expected_output: True
   - input: [1, 3, 2, 4, 5, 6, 7]
