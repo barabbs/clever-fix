@@ -2,7 +2,7 @@ import Imports.AllImports
 
 -- start_def problem_details
 /--
-function_signature: "def max_fill_count(grid : list[list[int]], capacity : int) -> int"
+function_signature: "def sort_array(lst : List[int]) -> List[int]"
 docstring: |
     Please write a function that sorts an array of non-negative integers according to
     number of ones in their binary representation in ascending order.
