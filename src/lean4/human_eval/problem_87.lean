@@ -14,11 +14,11 @@ docstring: |
     Also, sort coordinates of the row by columns in descending order.
 test_cases:
   - input: [[[1,2,3,4,5,6], [1,2,3,4,1,6], [1,2,3,4,5,1]], 1]
-    output: [(0, 0), (1, 4), (1, 0), (2, 5), (2, 0)]
+    output: [[0, 0], [1, 4], [1, 0], [2, 5], [2, 0]]
   - input: [[], 1]
     output: []
   - input: [[[], [1], [1, 2, 3]], 3]
-    output: [(2, 2)]
+    output: [[2, 2]]
 -/
 -- end_def problem_details
 

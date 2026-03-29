@@ -17,11 +17,11 @@ docstring: |
     otherwise, return "NO".
     If the two intervals don't intersect, return "NO".
 test_cases:
-  - input: [(1, 2), (2, 3)]
+  - input: [[1, 2], [2, 3]]
     expected_output: "NO"
-  - input: [(-1, 1), (0, 4)]
+  - input: [[-1, 1], [0, 4]]
     expected_output: "NO"
-  - input: [(-3, -1), (-5, 5)]
+  - input: [[-3, -1], [-5, 5]]
     expected_output: "YES"
 -/
 -- end_def problem_details

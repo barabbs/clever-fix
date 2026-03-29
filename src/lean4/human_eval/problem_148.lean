@@ -14,11 +14,11 @@ docstring: |
     The function should return an empty tuple if planet1 or planet2
     are not correct planet names.
 test_cases:
-  - input: ("Jupiter", "Neptune")
+  - input: ["Jupiter", "Neptune"]
     expected_output: ("Saturn", "Uranus")
-  - input: ("Earth", "Mercury")
+  - input: ["Earth", "Mercury"]
     expected_output: ("Venus")
-  - input: ("Mercury", "Uranus")
+  - input: ["Mercury", "Uranus"]
     expected_output: ("Venus", "Earth", "Mars", "Jupiter", "Saturn")
 -/
 -- end_def problem_details
