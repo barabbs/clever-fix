@@ -26,7 +26,7 @@ docstring: |
 test_cases:
   - input: [[[1,2,3], [4,5,6], [7,8,9]], 3]
     expected_output: [1,2,3]
-  - input: [ [5,9,3], [4,1,6], [7,8,2], 1]
+  - input: [[[5,9,3], [4,1,6], [7,8,2]], 1]
     expected_output: [1]
 -/
 -- end_def problem_details
