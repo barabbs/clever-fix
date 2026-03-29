@@ -7,17 +7,17 @@ docstring: |
     Your task is to write a function that returns true if a number x is a simple
     power of n and false in other cases. x is a simple power of n if n**int=x
 test_cases:
-  - input: (1, 4)
+  - input: [1, 4]
     expected_output: True
-  - input: (2, 2)
+  - input: [2, 2]
     expected_output: True
-  - input: (8, 2)
+  - input: [8, 2]
     expected_output: True
-  - input: (3, 2)
+  - input: [3, 2]
     expected_output: False
-  - input: (3, 1)
+  - input: [3, 1]
     expected_output: False
-  - input: (5, 3)
+  - input: [5, 3]
     expected_output: False
 -/
 -- end_def problem_details

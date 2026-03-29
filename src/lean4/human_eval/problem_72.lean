@@ -8,13 +8,13 @@ docstring: |
     The object q will fly if it's balanced (it is a palindromic list) and the sum of its elements is
     less than or equal the maximum possible weight w.
 test_cases:
-  - input: ([1, 2], 5)
+  - input: [[1, 2], 5]
     expected_output: False
-  - input: ([3, 2, 3], 1)
+  - input: [[3, 2, 3], 1]
     expected_output: False
-  - input: ([3, 2, 3], 9)
+  - input: [[3, 2, 3], 9]
     expected_output: True
-  - input: ([3], 5)
+  - input: [[3], 5]
     expected_output: True
 -/
 -- end_def problem_details

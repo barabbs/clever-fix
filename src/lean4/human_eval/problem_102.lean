@@ -8,9 +8,9 @@ docstring: |
     biggest even integer number that is in the range [x, y] inclusive. If
     there's no such number, then the function should return -1.
 test_cases:
-  - input: (12, 15)
+  - input: [12, 15]
     expected_output: 14
-  - input: (13, 12)
+  - input: [13, 12]
     expected_output: -1
 -/
 -- end_def problem_details

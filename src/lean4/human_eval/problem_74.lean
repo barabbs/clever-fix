@@ -8,15 +8,15 @@ docstring: |
   total number of chars in the all strings of the list less than the other list.
   If the two lists have the same number of chars, return the first list.
 test_cases:
-  - input: ([], [])
+  - input: [[], []]
     expected_output: []
-  - input: (['hi', 'admin'], ['hI', 'Hi'])
+  - input: [['hi', 'admin'], ['hI', 'Hi']]
     expected_output: ['hI', 'Hi']
-  - input: (['hi', 'admin'], ['hi', 'hi', 'admin', 'project'])
+  - input: [['hi', 'admin'], ['hi', 'hi', 'admin', 'project']]
     expected_output: ['hi', 'admin']
-  - input: (['hi', 'admin'], ['hI', 'hi', 'hi'])
+  - input: [['hi', 'admin'], ['hI', 'hi', 'hi']]
     expected_output: ['hI', 'hi', 'hi']
-  - input: (['4'], ['1', '2', '3', '4', '5'])
+  - input: [['4'], ['1', '2', '3', '4', '5']]
     expected_output: ['4']
 -/
 -- end_def problem_details

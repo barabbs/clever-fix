@@ -9,13 +9,13 @@ docstring: |
     Round the answer to the nearest integer and convert that to binary.
     If n is greater than m, return none.
 test_cases:
-  - input: (1, 5)
+  - input: [1, 5]
     expected_output: "0b11"
-  - input: (7, 5)
+  - input: [7, 5]
     expected_output: None
-  - input: (10, 20)
+  - input: [10, 20]
     expected_output: "0b1111"
-  - input: (20, 33)
+  - input: [20, 33]
     expected_output: "0b11010"
 -/
 -- end_def problem_details

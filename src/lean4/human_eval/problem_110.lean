@@ -12,9 +12,9 @@ docstring: |
     all the elements of lst1 to be even, return "YES".
     Otherwise, return "NO". It is assumed that the input lists will be non-empty.
 test_cases:
-  - input: ([1, 2, 3, 4], [1, 2, 3, 4])
+  - input: [[1, 2, 3, 4], [1, 2, 3, 4]]
     expected_output: "YES"
-  - input: ([1, 2, 3, 4], [1, 5, 3, 4])
+  - input: [[1, 2, 3, 4], [1, 5, 3, 4]]
     expected_output: "NO"
 -/
 -- end_def problem_details

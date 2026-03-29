@@ -8,11 +8,11 @@ docstring: |
     return string representation after the conversion.
     base numbers are less than 10.
 test_cases:
-  - input: (8, 3)
+  - input: [8, 3]
     expected_output: '22'
-  - input: (8, 2)
+  - input: [8, 2]
     expected_output: '1000'
-  - input: (7, 2)
+  - input: [7, 2]
     expected_output: '111'
 -/
 -- end_def problem_details

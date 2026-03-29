@@ -6,9 +6,9 @@ function_signature: "def triangle_area(a: float, h: float) -> float"
 docstring: |
     Given length of a side and high return area for a triangle.
 test_cases:
-  - input: (5, 3)
+  - input: [5, 3]
     expected_output: 7.5
-  - input: (8, 2)
+  - input: [8, 2]
     expected_output: 8.0
 -/
 -- end_def problem_details
