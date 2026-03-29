@@ -2,7 +2,7 @@ import Imports.AllImports
 
 -- start_def problem_details
 /--
-function_signature: "def is_palindrome(string: str) -> Bool"
+function_signature: "def is_palindrome(string: str) -> bool"
 docstring: |
     Checks if given string is a palindrome
 test_cases:

@@ -2,7 +2,7 @@ import Imports.AllImports
 
 -- start_def problem_details
 /--
-function_signature: "def generate_integers(a : Nat, b : Nat) -> List Nat"
+function_signature: "def generate_integers(a : nat, b : nat) -> List[nat]"
 docstring: |
     Given two positive integers a and b, return the even digits between a
     and b, in ascending order.

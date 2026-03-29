@@ -2,7 +2,7 @@ import Imports.AllImports
 
 -- start_def problem_details
 /--
-function_signature: "def below_threshold(numbers: List[Int], threshold: Int) -> bool"
+function_signature: "def below_threshold(numbers: List[int], threshold: int) -> bool"
 docstring: Return True if all numbers in the list l are below threshold t, and False otherwise.
 test_cases:
   - input: [[1, 2, 4, 10], 100]

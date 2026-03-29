@@ -2,7 +2,7 @@ import Imports.AllImports
 
 -- start_def problem_details
 /--
-function_signature: "def hex_key(num: string) -> int"
+function_signature: "def hex_key(num: str) -> int"
 docstring: |
     You have been tasked to write a function that receives
     a hexadecimal number as a string and counts the number of hexadecimal

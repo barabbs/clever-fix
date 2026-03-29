@@ -2,7 +2,7 @@ import Imports.AllImports
 
 -- start_def problem_details
 /--
-function_signature: "def pluck(numbers: List[Int]) -> List[Int]"
+function_signature: "def pluck(numbers: List[int]) -> List[int]"
 docstring: |
     Given an array representing a branch of a tree that has non-negative integer nodes
     your task is to pluck one of the nodes and return it.

@@ -2,7 +2,7 @@ import Imports.AllImports
 
 -- start_def problem_details
 /--
-function_signature: "def fruit_distribution(string: str, Nat n) -> Nat"
+function_signature: "def fruit_distribution(string: str, n: nat) -> nat"
 docstring: |
     In this task, you will be given a string that represents a number of apples and oranges
     that are distributed in a basket of fruit this basket contains

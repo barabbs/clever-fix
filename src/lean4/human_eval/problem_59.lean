@@ -2,7 +2,7 @@ import Imports.AllImports
 
 -- start_def problem_details
 /--
-function_signature: "def largest_prime_factor(n: Nat) -> Nat"
+function_signature: "def largest_prime_factor(n: nat) -> nat"
 docstring: |
     Return the largest prime factor of n. Assume n > 1 and is not a prime.
 test_cases:

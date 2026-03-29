@@ -2,7 +2,7 @@ import Imports.AllImports
 
 -- start_def problem_details
 /--
-function_signature: "def monotonic(numbers: List[int]) -> Bool"
+function_signature: "def monotonic(numbers: List[int]) -> bool"
 docstring: |
     Return True if list elements are monotonically increasing or decreasing.
 test_cases:

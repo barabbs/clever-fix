@@ -2,7 +2,7 @@ import Imports.AllImports
 
 -- start_def problem_details
 /--
-function_signature: "def derivative(xs: List Int) -> List Int"
+function_signature: "def derivative(xs: List[int]) -> List[int]"
 docstring: |
     xs represent coefficients of a polynomial.
     xs[0] + xs[1] * x + xs[2] * x^2 + ....

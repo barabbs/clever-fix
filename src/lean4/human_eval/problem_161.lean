@@ -2,7 +2,7 @@ import Imports.AllImports
 
 -- start_def problem_details
 /--
-function_signature: "def solve(string : String) -> String"
+function_signature: "def solve(string : str) -> str"
 docstring: |
     You are given a string s.
     if s[i] is a letter, reverse its case from lower to upper or vise versa,

@@ -2,7 +2,7 @@ import Imports.AllImports
 
 -- start_def problem_details
 /--
-function_signature: "def words_string(s: string) -> List[string]"
+function_signature: "def words_string(s: str) -> List[str]"
 docstring: |
     You will be given a string of words separated by commas or spaces. Your task is
     to split the string into words and return an array of the words.

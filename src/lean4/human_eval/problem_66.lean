@@ -2,7 +2,7 @@ import Imports.AllImports
 
 -- start_def problem_details
 /--
-function_signature: "def digitSum(string: str) -> Nat"
+function_signature: "def digitSum(string: str) -> nat"
 docstring: |
     Write a function that takes a string as input and returns the sum of the upper characters only'
     ASCII codes.

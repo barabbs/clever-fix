@@ -2,7 +2,7 @@ import Imports.AllImports
 
 -- start_def problem_details
 /--
-function_signature: "def cycpattern_check(String a, String b) -> Bool"
+function_signature: "def cycpattern_check(a: str, b: str) -> bool"
 docstring: |
     You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word, else False
 test_cases:

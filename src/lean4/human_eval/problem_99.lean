@@ -2,7 +2,7 @@ import Imports.AllImports
 import Std
 -- start_def problem_details
 /--
-function_signature: "def closest_integer(s : String) -> Option Int"
+function_signature: "def closest_integer(s : str) -> Optional[int]"
 docstring: |
     Create a function that takes a value (string) representing a number
     and returns the closest integer to it. If the number is equidistant

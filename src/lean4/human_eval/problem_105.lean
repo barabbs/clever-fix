@@ -2,7 +2,7 @@ import Imports.AllImports
 
 -- start_def problem_details
 /--
-function_signature: "def by_length(arr: List[int]) -> List[string]"
+function_signature: "def by_length(arr: List[int]) -> List[str]"
 docstring: |
     Given an array of integers, sort the integers that are between 1 and 9 inclusive,
     reverse the resulting array, and then replace each digit by its corresponding name from

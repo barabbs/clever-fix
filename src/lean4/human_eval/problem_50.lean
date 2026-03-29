@@ -2,7 +2,7 @@ import Imports.AllImports
 
 -- start_def problem_details
 /--
-function_signature: "def encode_shift(s: String) -> String"
+function_signature: "def encode_shift(s: str) -> str"
 docstring: |
     returns encoded string by shifting every character by 5 in the alphabet.
 test_cases:

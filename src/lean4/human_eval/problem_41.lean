@@ -2,7 +2,7 @@ import Imports.AllImports
 
 -- start_def problem_details
 /--
-function_signature: "def car_race_collision(x: Nat) -> Nat"
+function_signature: "def car_race_collision(x: nat) -> nat"
 docstring: |
     Imagine a road that's a perfectly straight infinitely long line.
     n cars are driving left to right;  simultaneously, a different set of n cars

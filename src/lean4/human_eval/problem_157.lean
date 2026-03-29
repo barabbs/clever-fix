@@ -2,7 +2,7 @@ import Imports.AllImports
 
 -- start_def problem_details
 /--
-function_signature: "def right_angle_triangle(a: Nat, b: Nat, c: Nat) -> Bool"
+function_signature: "def right_angle_triangle(a: nat, b: nat, c: nat) -> bool"
 docstring: |
     Given the lengths of the three sides of a triangle. Return True if the three
     sides form a right-angled triangle, False otherwise.

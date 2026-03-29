@@ -2,7 +2,7 @@ import Imports.AllImports
 
 -- start_def problem_details
 /--
-function_signature: "def modp(n: Nat, p: Nat) -> Nat"
+function_signature: "def modp(n: nat, p: nat) -> nat"
 docstring: |
     Return 2^n modulo p (be aware of numerics).
 test_cases:

@@ -2,7 +2,7 @@ import Imports.AllImports
 
 -- start_def problem_details
 /--
-function_signature: "def circular_shift(x: Int, shift: Int) -> String"
+function_signature: "def circular_shift(x: int, shift: int) -> str"
 docstring: |
     Circular shift the digits of the integer x, shift the digits right by shift
     and return the result as a string.

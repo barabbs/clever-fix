@@ -2,7 +2,7 @@ import Imports.AllImports
 
 -- start_def problem_details
 /--
-function_signature: "def eat(number: Nat, need: Nat, remaining: Nat) -> List Nat"
+function_signature: "def eat(number: nat, need: nat, remaining: nat) -> List[nat]"
 docstring: |
     You're a hungry rabbit, and you already have eaten a certain number of carrots,
     but now you need to eat more carrots to complete the day's meals.

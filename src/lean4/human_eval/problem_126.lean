@@ -2,7 +2,7 @@ import Imports.AllImports
 
 -- start_def problem_details
 /--
-function_signature: "def is_sorted(lst: List[int]) -> Bool"
+function_signature: "def is_sorted(lst: List[int]) -> bool"
 docstring: |
     Given a list of numbers, return whether or not they are sorted
     in ascending order. If list has more than 1 duplicate of the same

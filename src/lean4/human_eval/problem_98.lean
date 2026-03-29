@@ -2,7 +2,7 @@ import Imports.AllImports
 
 -- start_def problem_details
 /--
-function_signature: "def count_upper(s : String) -> Int"
+function_signature: "def count_upper(s : str) -> int"
 docstring: |
     Given a string s, count the number of uppercase vowels in even indices.
     -- Note(George): I also feel like this one is hard to not leak, I tried a trick about keeping implementation for a recursive call in the spec. Let me know if this doesn't work..

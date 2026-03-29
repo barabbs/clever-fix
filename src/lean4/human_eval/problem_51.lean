@@ -2,7 +2,7 @@ import Imports.AllImports
 
 -- start_def problem_details
 /--
-function_signature: "def remove_vowels(string: str) -> string"
+function_signature: "def remove_vowels(string: str) -> str"
 docstring: |
     remove_vowels is a function that takes string and returns string without vowels.
 test_cases:

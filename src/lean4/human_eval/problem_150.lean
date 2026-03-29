@@ -2,7 +2,7 @@ import Imports.AllImports
 
 -- start_def problem_details
 /--
-function_signature: "def x_or_y(int n, int x, int y) -> int"
+function_signature: "def x_or_y(n: int, x: int, y: int) -> int"
 docstring: |
     A simple program which should return the value of x if n is
     a prime number and should return the value of y otherwise.

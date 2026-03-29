@@ -2,7 +2,7 @@ import Imports.AllImports
 
 -- start_def problem_details
 /--
-function_signature: "def common(l1: List[Int], l2: List[Int]) -> List[Int]"
+function_signature: "def common(l1: List[int], l2: List[int]) -> List[int]"
 docstring: |
     Return sorted unique common elements for two lists.
 test_cases:

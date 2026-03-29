@@ -2,7 +2,7 @@ import Imports.AllImports
 
 -- start_def problem_details
 /--
-function_signature: "def Strongest_Extension(class_name: String, extensions: List[String]) -> String"
+function_signature: "def Strongest_Extension(class_name: str, extensions: List[str]) -> str"
 docstring: |
     You will be given the name of a class (a string) and a list of extensions.
     The extensions are to be used to load additional classes to the class. The

@@ -2,7 +2,7 @@ import Imports.AllImports
 
 -- start_def problem_details
 /--
-function_signature: "def find_max(words: List String) -> String"
+function_signature: "def find_max(words: List[str]) -> str"
 docstring: |
     Write a function that accepts a list of strings.
     The list contains different words. Return the word with maximum number

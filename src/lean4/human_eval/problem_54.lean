@@ -2,7 +2,7 @@ import Imports.AllImports
 
 -- start_def problem_details
 /--
-function_signature: "def same_chars(s0: string, s1: string) -> Bool"
+function_signature: "def same_chars(s0: str, s1: str) -> bool"
 docstring: Check if two words have the same characters.
 test_cases:
   - input: ['eabcdzzzz', 'dddzzzzzzzddeddabc']

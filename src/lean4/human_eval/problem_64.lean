@@ -2,7 +2,7 @@ import Imports.AllImports
 
 -- start_def problem_details
 /--
-function_signature: "def remove_vowels(string: str) -> Nat"
+function_signature: "def remove_vowels(string: str) -> nat"
 docstring: |
     Write a function vowels_count which takes a string representing
     a word as input and returns the number of vowels in the string.

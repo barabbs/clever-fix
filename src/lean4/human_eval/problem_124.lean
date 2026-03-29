@@ -2,7 +2,7 @@ import Imports.AllImports
 
 -- start_def problem_details
 /--
-function_signature: "def valid_date(date: str) -> Bool"
+function_signature: "def valid_date(date: str) -> bool"
 docstring: |
     You have to write a function which validates a given date string and
     returns True if the date is valid otherwise False.

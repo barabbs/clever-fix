@@ -2,7 +2,7 @@ import Imports.AllImports
 
 -- start_def problem_details
 /--
-function_signature: "def triples_sum_to_zero(numbers: List[int]) -> Bool"
+function_signature: "def triples_sum_to_zero(numbers: List[int]) -> bool"
 docstring: |
     triples_sum_to_zero takes a list of integers as an input.
     it returns True if there are three distinct elements in the list that

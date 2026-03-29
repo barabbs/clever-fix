@@ -2,7 +2,7 @@ import Imports.AllImports
 
 -- start_def problem_details
 /--
-function_signature: "def sum_to_n(n: Nat) -> Nat"
+function_signature: "def sum_to_n(n: nat) -> nat"
 docstring: |
     sum_to_n is a function that sums numbers from 1 to n.
 test_cases:

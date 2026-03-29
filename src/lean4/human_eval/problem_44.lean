@@ -2,7 +2,7 @@ import Imports.AllImports
 
 -- start_def problem_details
 /--
-function_signature: "def change_base(x: Nat, base: Nat) -> String"
+function_signature: "def change_base(x: nat, base: nat) -> str"
 docstring: |
     Change numerical base of input number x to base.
     return string representation after the conversion.

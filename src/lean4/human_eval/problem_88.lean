@@ -2,7 +2,7 @@ import Imports.AllImports
 
 -- start_def problem_details
 /--
-function_signature: "def sort_array(lst : list(int)) -> list(int)"
+function_signature: "def sort_array(lst : List[int]) -> List[int]"
 docstring: |
     """
     Given an array of non-negative integers, return a copy of the given array after sorting,

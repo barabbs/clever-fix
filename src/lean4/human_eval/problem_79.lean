@@ -2,7 +2,7 @@ import Imports.AllImports
 
 -- start_def problem_details
 /--
-function_signature: "def decimal_to_binary(decimal: nat) -> string"
+function_signature: "def decimal_to_binary(decimal: nat) -> str"
 docstring: |
     You will be given a number in decimal form and your task is to convert it to
     binary format. The function should return a string, with each character representing a binary

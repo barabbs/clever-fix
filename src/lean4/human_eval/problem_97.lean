@@ -2,7 +2,7 @@ import Imports.AllImports
 
 -- start_def problem_details
 /--
-function_signature: "def multiply(a : Int, b : Int) -> Int"
+function_signature: "def multiply(a : int, b : int) -> int"
 docstring: |
     Complete the function that takes two integers and returns
     the product of their unit digits.

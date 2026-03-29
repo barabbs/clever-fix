@@ -2,7 +2,7 @@ import Imports.AllImports
 
 -- start_def problem_details
 /--
-function_signature: "def add(x: Int, y: Int) -> Int"
+function_signature: "def add(x: int, y: int) -> int"
 docstring: Add two numbers x and y
 test_cases:
   - input: [2, 3]

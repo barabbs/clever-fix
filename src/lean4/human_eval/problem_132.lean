@@ -2,7 +2,7 @@ import Imports.AllImports
 
 -- start_def problem_details
 /--
-function_signature: "def is_nested(string: str) -> Bool"
+function_signature: "def is_nested(string: str) -> bool"
 docstring: |
     Create a function that takes a string as input which contains only parentheses.
     The function should return True if and only if there is a valid subsequence of parentheses

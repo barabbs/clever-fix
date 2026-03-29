@@ -2,7 +2,7 @@ import Imports.AllImports
 
 -- start_def problem_details
 /--
-function_signature: "def correct_bracketing(brackets: str) -> Bool"
+function_signature: "def correct_bracketing(brackets: str) -> bool"
 docstring: |
     brackets is a string of "(" and ")".
     return True if every opening bracket has a corresponding closing bracket.

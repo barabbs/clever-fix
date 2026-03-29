@@ -2,7 +2,7 @@ import Imports.AllImports
 
 -- start_def problem_details
 /--
-function_signature: "def largest_smallest_integers(lst: List[int]) -> Tuple[ Optional[Int], Optional[Int] ]"
+function_signature: "def largest_smallest_integers(lst: List[int]) -> Tuple[Optional[int], Optional[int]]"
 docstring: |
     Create a function that returns a tuple (a, b), where 'a' is
     the largest of negative integers, and 'b' is the smallest

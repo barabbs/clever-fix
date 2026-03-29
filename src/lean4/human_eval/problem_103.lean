@@ -2,7 +2,7 @@ import Imports.AllImports
 
 -- start_def problem_details
 /--
-function_signature: "def rounded_avg(n: nat, m: nat) -> Option[string]"
+function_signature: "def rounded_avg(n: nat, m: nat) -> Optional[str]"
 docstring: |
     You are given two positive integers n and m, and your task is to compute the
     average of the integers from n through m (including n and m).

@@ -2,7 +2,7 @@ import Imports.AllImports
 
 -- start_def problem_details
 /--
-function_signature: "def int_to_mini_roman(num: Nat) -> String"
+function_signature: "def int_to_mini_roman(num: nat) -> str"
 docstring: |
     Given a positive integer, obtain its roman numeral equivalent as a string,
     and return it in lowercase.

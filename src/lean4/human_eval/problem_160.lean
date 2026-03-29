@@ -2,7 +2,7 @@ import Imports.AllImports
 
 -- start_def problem_details
 /--
-function_signature: "def do_algebra(operator: List String, operand: List Nat) -> Int"
+function_signature: "def do_algebra(operator: List[str], operand: List[nat]) -> int"
 docstring: |
     Given two lists operator, and operand. The first list has basic algebra operations, and
     the second list is a list of integers. Use the two given lists to build the algebric
