@@ -12,7 +12,7 @@ test_cases:
     expected_output: True
   - input: {"a":"apple", "A":"banana", "B":"banana"}
     expected_output: False
-  - input: {"a":"apple", "b":"banana", "a":"apple"}
+  - input: {"a":"apple", "8":"banana", "a":"apple"}
     expected_output: False
   - input: {"Name":"John", "Age":"36", "City":"Houston"}
     expected_output: False
@@ -73,7 +73,7 @@ sorry
 -- start_def test_cases
 -- #test implementation (Std.HashMap.ofList [("a", "apple"), ("b", "banana")]) = true
 -- #test implementation (Std.HashMap.ofList [("a", "apple"), ("A", "banana"), ("B", "banana")]) = false
--- #test implementation (Std.HashMap.ofList [("a", "apple"), ("b", "banana"), ("a", "apple")]) = false
+-- #test implementation (Std.HashMap.ofList [("a", "apple"), ("8", "banana"), ("a", "apple")]) = false
 -- #test implementation (Std.HashMap.ofList [("Name", "John"), ("Age", "36"), ("City", "Houston")]) = false
 -- #test implementation (Std.HashMap.ofList [("STATE", "NC"), ("ZIP", "12345")]) = true
 -- end_def test_cases
