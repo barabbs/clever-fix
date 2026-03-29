@@ -9,9 +9,9 @@ docstring: |
     If shift > number of digits, return digits reversed.
 test_cases:
   - input: [12, 1]
-    expected_output: 21
+    expected_output: "21"
   - input: [12, 2]
-    expected_output: 12
+    expected_output: "12"
 -/
 -- end_def problem_details
 
