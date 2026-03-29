@@ -4,7 +4,6 @@ import Imports.AllImports
 /--
 function_signature: "def anti_shuffle(s : str) -> str"
 docstring: |
-    """
     Write a function that takes a string and returns an ordered version of it.
     Ordered version of string, is a string where all words (separated by space)
     are replaced by a new word where all the characters arranged in
