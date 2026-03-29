@@ -9,13 +9,13 @@ docstring: |
     Assume the input is always valid.
     -- Note(George): I'm finding it hard to not leak the implementation here, so I opted to make the spec more convoluted.
 test_cases:
-  - input: 148, 412
+  - input: [148, 412]
     expected_output: 16
-  - input: 19, 28
+  - input: [19, 28]
     expected_output: 72
-  - input: 2020, 1851
+  - input: [2020, 1851]
     expected_output: 0
-  - input: 14, -15
+  - input: [14, -15]
     expected_output: 20
 -/
 -- end_def problem_details
