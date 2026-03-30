@@ -65,7 +65,10 @@ fibonacci_non_computable_3 (n + 3) (f₁ + f₂ + f₃)
 name: string_eq_iff_data_eq
 use: |
   Helper function to prove that two strings are equal if their data is equal.
-problems: []
+problems:
+  - 1
+  - 6
+  - 132
 sample_problems:
   - 0
 -/
@@ -148,6 +151,7 @@ def string_is_paren_balanced
 string_is_paren_balanced_helper paren_string 0
 -- end_def helper_definitions
 
+-- start_def helper_definitions
 /--
 name: balanced_paren_non_computable
 use: |
@@ -155,6 +159,9 @@ use: |
 problems:
   - 1
   - 6
+  - 56
+  - 61
+  - 119
   - 132
 sample_problems:
   - 0
@@ -165,6 +172,7 @@ def balanced_paren_non_computable
 let chars := paren_string.toList;
 (∀ (i : ℕ), i ≤ chars.length → ((chars.take i).count bracket_type_right) ≤ ((chars.take i).count bracket_type_left)) ∧
 (chars.count bracket_type_left = chars.count bracket_type_right)
+-- end_def helper_definitions
 
 -- start_def helper_definitions
 /--
@@ -449,7 +457,7 @@ def romanToDecimalAux : List Char → Nat
 
 -- start_def helper_definitions
 /--
-name: romanToDecimalAux
+name: romanToDecimal
 use: |
   Function to convert a valid lowercase Roman numeral string to Nat
 problems:
@@ -549,7 +557,7 @@ inductive evalArith_mul : List String → Int → Prop
 
 -- start_def helper_definitions
 /--
-name: evalArith_mul
+name: evalArith_add
 use: |
   Relational spec for addition/subtraction (lowest precedence).
 problems:
@@ -565,7 +573,7 @@ inductive evalArith_add : List String → Int → Prop
 
 -- start_def helper_definitions
 /--
-name: evalArith_mul
+name: evalArith_precedence
 use: |
   Main function to evaluate an expression
 problems:
