@@ -15,10 +15,6 @@ test_cases:
 -/
 -- end_def problem_details
 
-noncomputable def check_derivative : List ℤ → List ℤ
-  | []       => []
-  | (x::rest)  => (Polynomial.eval 1 (Polynomial.derivative (Polynomial.C x * Polynomial.X ^ rest.length))) :: (check_derivative rest)
-
 -- start_def problem_spec
 def problem_spec
 -- function signature

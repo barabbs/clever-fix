@@ -305,6 +305,19 @@ s = s.toList.reverse.asString
 
 -- start_def helper_definitions
 /--
+name: check_derivative
+use: |
+  Helper to compute the derivative of a polynomial given as a list of integer coefficients, evaluated at 1.
+problems:
+  - 62
+-/
+noncomputable def check_derivative : List ℤ → List ℤ
+  | []       => []
+  | (x::rest)  => (Polynomial.eval 1 (Polynomial.derivative (Polynomial.C x * Polynomial.X ^ rest.length))) :: (check_derivative rest)
+-- end_def helper_definitions
+
+-- start_def helper_definitions
+/--
 name: collatz_reachable
 use: |
   Helper to check if a natural number m is reachable in the Collatz sequence starting at n.
