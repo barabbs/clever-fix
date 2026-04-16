@@ -9,9 +9,9 @@ docstring: |
     For similar number of ones, sort based on decimal value.
 test_cases:
   - input: [1, 5, 2, 3, 4]
-    expected_output: [1, 2, 3, 4, 5]
+    expected_output: [1, 2, 4, 3, 5]
   - input: [1, 0, 2, 3, 4]
-    expected_output: [0, 1, 2, 3, 4]
+    expected_output: [0, 1, 2, 4, 3]
 -/
 -- end_def problem_details
 
@@ -64,8 +64,8 @@ sorry
 -- end_def implementation
 
 -- start_def test_cases
--- #test implementation [1, 5, 2, 3, 4] = [1, 2, 3, 4, 5]
--- #test implementation [1, 0, 2, 3, 4] = [0, 1, 2, 3, 4]
+-- #test implementation [1, 5, 2, 3, 4] = [1, 2, 4, 3, 5]
+-- #test implementation [1, 0, 2, 3, 4] = [0, 1, 2, 4, 3]
 -- end_def test_cases
 
 

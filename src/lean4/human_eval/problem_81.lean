@@ -103,7 +103,7 @@ sorry
 -- end_def implementation
 
 -- start_def test_cases
--- #test implementation [4.0, 3, 1.7, 2, 3.5] = ['A+', 'B', 'C-', 'C', 'A-']
+-- #test implementation [4.0, 3, 1.7, 2, 3.5] = ["A+", "B", "C-", "C", "A-"]
 -- end_def test_cases
 
 -- start_def correctness_definition

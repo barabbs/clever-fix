@@ -74,7 +74,7 @@ sorry
 
 -- Uncomment the following test cases after implementing the function
 -- start_def test_cases
--- #test implementation ['+', '*', '-'] [2,3,4,5] = 9
+-- #test implementation ["+", "*", "-"] [2,3,4,5] = 9
 -- end_def test_cases
 
 

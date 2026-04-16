@@ -70,7 +70,7 @@ sorry
 -- start_def test_cases
 -- #test implementation 1 = True
 -- #test implementation 2 = False
--- #test implementation -1 = True
+-- #test implementation (-1) = True
 -- #test implementation 64 = True
 -- #test implementation 180 = False
 -- #test implementation 1000 = True

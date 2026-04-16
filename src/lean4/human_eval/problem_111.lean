@@ -75,11 +75,11 @@ sorry
 -- end_def implementation
 
 -- start_def test_cases
--- #test implementation 'a b c' = {'a': 1, 'b': 1, 'c': 1}
--- #test implementation 'a b b a' = {'a': 2, 'b': 2}
--- #test implementation 'a b c a b' = {'a': 2, 'b': 2}
--- #test implementation 'b b b b a' = {'b': 4}
--- #test implementation '' = {}
+-- #test (implementation "a b c").size == 3 && (implementation "a b c").getD 'a' 0 == 1 && (implementation "a b c").getD 'b' 0 == 1 && (implementation "a b c").getD 'c' 0 == 1
+-- #test (implementation "a b b a").size == 2 && (implementation "a b b a").getD 'a' 0 == 2 && (implementation "a b b a").getD 'b' 0 == 2
+-- #test (implementation "a b c a b").size == 2 && (implementation "a b c a b").getD 'a' 0 == 2 && (implementation "a b c a b").getD 'b' 0 == 2
+-- #test (implementation "b b b b a").size == 1 && (implementation "b b b b a").getD 'b' 0 == 4
+-- #test (implementation "").size == 0
 -- end_def test_cases
 
 

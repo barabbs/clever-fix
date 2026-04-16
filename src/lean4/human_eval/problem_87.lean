@@ -78,9 +78,9 @@ sorry
 -- end_def implementation
 
 -- start_def test_cases
--- #test implementation "Hi" = "Hi"
--- #test implementation "hello" = "ehllo"
--- #test implementation "Hello World!!!" = "Hello !!!Wdlor"
+-- #test implementation [[1, 2, 3, 4, 5, 6], [1, 2, 3, 4, 1, 6], [1, 2, 3, 4, 5, 1]] 1 = [(0, 0), (1, 4), (1, 0), (2, 5), (2, 0)]
+-- #test implementation [] 1 = []
+-- #test implementation [[], [1], [1, 2, 3]] 3 = [(2, 2)]
 -- end_def test_cases
 
 -- start_def correctness_definition

@@ -70,8 +70,8 @@ sorry
 -- Uncomment the following test cases after implementing the function
 -- start_def test_cases
 -- #test implementation "" = ""
--- #test implementation "cat" = "catac"
--- #test implementation "cata" = "catac"
+-- #test implementation "cat" = "ct"
+-- #test implementation "cata" = "ct"
 -- end_def test_cases
 
 -- start_def correctness_definition

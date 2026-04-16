@@ -68,8 +68,8 @@ sorry
 
 -- Uncomment the following test cases after implementing the function
 -- start_def test_cases
--- #test implementation (12 : Int) (1 : Int) = "21"
--- #test implementation (12 : Int) (2 : Int) = "12"
+-- #test implementation 12 1 = "21"
+-- #test implementation 12 2 = "12"
 -- end_def test_cases
 
 -- start_def correctness_definition

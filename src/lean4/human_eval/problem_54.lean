@@ -59,12 +59,12 @@ sorry
 
 -- Uncomment the following test cases after implementing the function
 -- start_def test_cases
--- #test implementation 'eabcdzzzz' 'dddzzzzzzzddeddabc' = true
--- #test implementation 'abcd' 'dddddddabc' = true
--- #test implementation 'dddddddabc' 'abcd' = true
--- #test implementation 'eabcd' 'dddddddabc' = false
--- #test implementation 'abcd' 'dddddddabce' = false
--- #test implementation 'eabcdzzzz' 'dddzzzzzzzddddabc' = false
+-- #test implementation "eabcdzzzz" "dddzzzzzzzddeddabc" = true
+-- #test implementation "abcd" "dddddddabc" = true
+-- #test implementation "dddddddabc" "abcd" = true
+-- #test implementation "eabcd" "dddddddabc" = false
+-- #test implementation "abcd" "dddddddabce" = false
+-- #test implementation "eabcdzzzz" "dddzzzzzzzddddabc" = false
 -- end_def test_cases
 
 

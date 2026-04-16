@@ -69,7 +69,7 @@ sorry
 -- Uncomment the following test cases after implementing the function
 -- start_def test_cases
 -- #test implementation [4, 1, 2, 2, 3, 1] = 2
--- #test implementation [1, 2, 2, 3, 3, 4, 4, 4] = 3
+-- #test implementation [1, 2, 2, 3, 3, 3, 4, 4, 4] = 3
 -- #test implementation [5, 5, 4, 4, 4] = -1
 -- end_def test_cases
 

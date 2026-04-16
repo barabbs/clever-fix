@@ -86,7 +86,7 @@ sorry
 
 -- Uncomment the following test cases after implementing the function
 -- start_def test_cases
--- #test implementation 'my_class', ['AA', 'Be', 'CC'] = 'my_class.AA'
+-- #test implementation "my_class" ["AA", "Be", "CC"] = "my_class.AA"
 -- end_def test_cases
 
 

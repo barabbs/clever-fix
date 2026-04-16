@@ -25,7 +25,7 @@ docstring: |
     Return an ordered list of the values on the cells that the minimum path go through.
 test_cases:
   - input: [[[1,2,3], [4,5,6], [7,8,9]], 3]
-    expected_output: [1,2,3]
+    expected_output: [1,2,1]
   - input: [[[5,9,3], [4,1,6], [7,8,2]], 1]
     expected_output: [1]
 -/
@@ -97,7 +97,7 @@ sorry
 
 -- Uncomment the following test cases after implementing the function
 -- start_def test_cases
--- #test implementation [[1,2,3], [4,5,6], [7,8,9]] 3 = [1,2,3]
+-- #test implementation [[1,2,3], [4,5,6], [7,8,9]] 3 = [1,2,1]
 -- #test implementation [[5,9,3], [4,1,6], [7,8,2]] 1 = [1]
 -- end_def test_cases
 

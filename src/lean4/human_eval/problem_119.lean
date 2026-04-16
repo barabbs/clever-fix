@@ -71,8 +71,8 @@ sorry
 -- end_def implementation
 
 -- start_def test_cases
--- #test implementation ['()(', ')'] = "Yes"
--- #test implementation [')', ')'] = "No"
+-- #test implementation ["()(", ")"] = "Yes"
+-- #test implementation [")", ")"] = "No"
 -- end_def test_cases
 
 

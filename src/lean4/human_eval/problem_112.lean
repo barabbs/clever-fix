@@ -74,9 +74,9 @@ sorry
 -- end_def implementation
 
 -- start_def test_cases
--- #test implementation "abcde" "ae" = ("bcd", False)
--- #test implementation "abcdef" "b" = ("acdef", False)
--- #test implementation "abcdedcba" "ab" = ("cdedc", True)
+-- #test implementation "abcde" "ae" = ("bcd", false)
+-- #test implementation "abcdef" "b" = ("acdef", false)
+-- #test implementation "abcdedcba" "ab" = ("cdedc", true)
 -- end_def test_cases
 
 

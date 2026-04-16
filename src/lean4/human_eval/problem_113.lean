@@ -68,8 +68,8 @@ sorry
 -- end_def implementation
 
 -- start_def test_cases
--- #test implementation ['1234567'] = ["the number of odd elements 4n the str4ng 4 of the 4nput."]
--- #test implementation ['3',"11111111"] = ["the number of odd elements 1n the str1ng 1 of the 1nput.", "the number of odd elements 8n the str8ng 8 of the 8nput."]
+-- #test implementation ["1234567"] = ["the number of odd elements 4n the str4ng 4 of the 4nput."]
+-- #test implementation ["3","11111111"] = ["the number of odd elements 1n the str1ng 1 of the 1nput.", "the number of odd elements 8n the str8ng 8 of the 8nput."]
 -- end_def test_cases
 
 

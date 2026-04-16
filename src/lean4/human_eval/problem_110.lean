@@ -82,8 +82,8 @@ sorry
 -- end_def implementation
 
 -- start_def test_cases
--- #test implementation ([1, 2, 3, 4], [1, 2, 3, 4]) = "YES"
--- #test implementation ([1, 2, 3, 4], [1, 5, 3, 4]) = "NO"
+-- #test implementation [1, 2, 3, 4] [1, 2, 3, 4] = "YES"
+-- #test implementation [1, 2, 3, 4] [1, 5, 3, 4] = "NO"
 -- end_def test_cases
 
 
