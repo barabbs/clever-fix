@@ -33,7 +33,7 @@ let spec (result : String) :=
   (∀ i, i < str.length →
     let c := str.data[i]!
     let c' := result.data[i]!
-    ((c'.toNat - 97) + 2 * 2) % 26 = (c.toNat - 97))
+    ((c.toNat - 97) + 2 * 2) % 26 = (c'.toNat - 97))
 -- program termination
 ∃ result,
   implementation str = result ∧
