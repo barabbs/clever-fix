@@ -29,7 +29,7 @@ def problem_spec
 let spec (result : Bool) :=
   (result → (List.Palindrome q)) ∧
   (result → (List.sum q ≤ w)) ∧
-  (¬(List.Palindrome q) → ¬ result) ∧
+  ((List.Palindrome q) → (List.sum q ≤ w) → result) ∧
   (¬(List.sum q ≤ w) → ¬ result)
 -- program termination
 ∃ result, implementation q w = result ∧
