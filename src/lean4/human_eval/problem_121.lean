@@ -25,11 +25,11 @@ def problem_spec
 -- spec
 let spec (result : Int) :=
 lst ≠ [] → ∀ i,  i < lst.length ∧ i % 2 = 0 →
-  (lst.length = 1 → impl lst = 0) ∧
+  (lst.length = 1 → impl lst = if lst[0]! % 2 = 1 then lst[0]! else 0) ∧
   (i + 1 < lst.length →
-    (lst[i + 1]! % 2 = 1 →
-    impl (lst.drop i) = lst[i + 1]! + (if i + 2 < lst.length then impl (lst.drop (i+2)) else 0)) ∧
-    (lst[i + 1]! % 2 = 0 →
+    (lst[i]! % 2 = 1 →
+    impl (lst.drop i) = lst[i]! + (if i + 2 < lst.length then impl (lst.drop (i+2)) else 0)) ∧
+    (lst[i]! % 2 = 0 →
     impl (lst.drop i) = if i + 2 < lst.length then impl (lst.drop (i+2)) else 0)
   )
 -- program terminates
