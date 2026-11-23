@@ -24,8 +24,8 @@ def problem_spec
 (strings: List String) :=
 -- spec
 let spec (result: Option String) :=
-  (result = none ↔ strings.length = 0) ∨
-  (∃ longest, result = some longest ∧
+  (result = none ↔ strings.length = 0) ∧
+  (strings ≠ [] → ∃ longest, result = some longest ∧
   longest ∈ strings ∧
   ∀ s, s ∈ strings → s.length ≤ longest.length →
   (∃ i, i < strings.length ∧
