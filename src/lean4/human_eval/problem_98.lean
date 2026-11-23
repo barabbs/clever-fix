@@ -26,10 +26,10 @@ def problem_spec
 let uppercase_vowels := ['A', 'E', 'I', 'O', 'U']
 let spec (result : Int) :=
   let chars := s.toList
-  (result = 0 ↔ ∀ i, i < chars.length → chars[i]! ∉ uppercase_vowels) ∧
+  (result = 0 ↔ ∀ i, i < chars.length → Even i → chars[i]! ∉ uppercase_vowels) ∧
   (1 < chars.length →
-    (result - 1 = implementation (chars.drop 2).toString ↔ chars[0]! ∈ uppercase_vowels) ∨
-    (result = implementation (chars.drop 2).toString ↔ chars[0]! ∉ uppercase_vowels)
+    (result - 1 = implementation (String.mk (chars.drop 2)) ↔ chars[0]! ∈ uppercase_vowels) ∨
+    (result = implementation (String.mk (chars.drop 2)) ↔ chars[0]! ∉ uppercase_vowels)
   )
 -- program termination
 ∃ result,
