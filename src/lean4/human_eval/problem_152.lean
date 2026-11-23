@@ -29,8 +29,8 @@ def problem_spec
 (scores guesses: List Rat) :=
 -- spec
 let spec (result: List Rat) :=
+  scores.length = guesses.length →
   result.length = scores.length ∧
-  scores.length = guesses.length ∧
   ∀ i, i < scores.length →
   if scores[i]! > guesses[i]! then result[i]! + guesses[i]! = scores[i]!
   else result[i]! + scores[i]! = guesses[i]!
