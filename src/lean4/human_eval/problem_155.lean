@@ -24,7 +24,7 @@ let spec (result: Int × Int) :=
   let (even_count, odd_count) := result;
   let numAbs := |num|.toNat;
   let numBy10 := numAbs/10;
-  let (even_count', odd_count') := impl numBy10;
+  let (even_count', odd_count') := if numBy10 = 0 then (0, 0) else impl numBy10;
   (result = impl numAbs) ∧
   (0 ≤ num → (Even num ↔ 1 + even_count' = even_count) ∧ (Odd num ↔ even_count' = even_count)) ∧
   (0 ≤ num → (Odd num ↔ 1 + odd_count' = odd_count) ∧ (Even num ↔ odd_count' = odd_count));
