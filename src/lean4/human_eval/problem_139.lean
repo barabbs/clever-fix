@@ -22,7 +22,7 @@ def problem_spec
 -- spec
 let spec (result: Nat) :=
 let factorial := Nat.factorial n;
-(0 < n → result / factorial = impl (n - 1)) ∧
+(0 < n → result = factorial * impl (n - 1)) ∧
 (n = 0 → result = 1);
 -- program termination
 ∃ result, impl n = result ∧
