@@ -37,6 +37,7 @@ let spec (result : Option Int) :=
   | none => ¬ (∃ i j, i < lst.length ∧ j < lst.length ∧ i ≠ j ∧ lst.get! i < lst.get! j)
   | some result =>
     let smaller_els := lst.filter (· < result);
+    result ∈ lst ∧
     0 < smaller_els.length ∧
     smaller_els.all (λ x => x = smaller_els.get! 0);
 -- program termination
