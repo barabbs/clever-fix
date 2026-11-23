@@ -56,16 +56,16 @@ let grade_dict : List (Float × String) :=
     (0.0, "D-")
   ]
 let spec (result : List String) :=
-  grades.all (fun grade => 0.0 ≤ grade ∧ grade ≤ 4.0) ∧
+  grades.all (fun grade => 0.0 ≤ grade ∧ grade ≤ 4.0) →
   result.length = grades.length ∧
   ∀ i, i < grades.length →
     let number_grade := grades[i]!
     let number_grade_keys := grade_dict.map (fun (g, _) => g)
     if 0.0 < number_grade then
-      ∃ i : Nat, i < number_grade_keys.length ∧
-        number_grade_keys[i]! ≤ number_grade ∧
-        (∀ k' : Nat, k' < number_grade_keys.length → number_grade_keys[k']! ≤ number_grade → number_grade_keys[k']! ≤ number_grade_keys[i]!) ∧
-        result[i]! = (grade_dict[i]!).snd
+      ∃ j : Nat, j < number_grade_keys.length ∧
+        number_grade_keys[j]! ≤ number_grade ∧
+        (∀ k' : Nat, k' < number_grade_keys.length → number_grade_keys[k']! ≤ number_grade → number_grade_keys[k']! ≤ number_grade_keys[j]!) ∧
+        result[i]! = (grade_dict[j]!).snd
     else
       result[i]! = "E"
 -- program termination
