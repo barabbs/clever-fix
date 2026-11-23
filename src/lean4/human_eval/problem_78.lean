@@ -42,7 +42,7 @@ let spec (result: Int) :=
     else if ch.isUpper then
       ((ch.toNat - 'A'.toNat) + 10)
     else 0;
-  0 < num.length →
+  if num.length = 0 then result = 0 else
   (
     let char_val := num_val num.toList[0]!;
     let is_prime_hex := Nat.Prime char_val ∧ char_val ≤ 15;
