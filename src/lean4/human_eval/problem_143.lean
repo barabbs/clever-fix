@@ -30,9 +30,9 @@ def problem_spec
 -- spec
 let spec (result: String) :=
 let words := sentence.splitOn;
-let result_words := result.splitOn;
+let result_words := if result = "" then [] else result.splitOn;
   1 ≤ sentence.length → sentence.length ≤ 100 →
-  sentence.all (fun x => Char.isAlpha x) →
+  sentence.all (fun x => Char.isAlpha x ∨ x = ' ') →
   result_words.length ≤ words.length ∧
   (∀ word ∈ result_words, word ∈ words ∧ Nat.Prime word.length) ∧
   match result_words with
