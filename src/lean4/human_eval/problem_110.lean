@@ -43,7 +43,7 @@ let spec (result : String) :=
         let i_idx := (lst1_idxs.indexesOf i).head!
         Even (lst2.get! (lst2_idxs.get! i_idx)))
   (bool_result → result = "YES") ∧
-  (result = "NO" → ¬ bool_result) ∧
+  (¬ bool_result → result = "NO") ∧
   (result ≠ "YES" ∧ result ≠ "NO" → False)
 -- program termination
 ∃ result,
