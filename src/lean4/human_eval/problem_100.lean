@@ -26,6 +26,7 @@ def problem_spec
 (n: Int) :=
 -- spec
 let spec (result: List Int) :=
+  0 ≤ n →
   result.length = n ∧
   (forall i: Nat, (1 <= i ∧ i < n) → (result[i]! = result[i-1]! + 2)) ∧
   result[0]! = n
