@@ -33,8 +33,8 @@ let spec (result : Bool) :=
   | true => result = false
   | false =>
     let keys := D.keys
-    let all_lower := keys.all (fun s => s.toLower = s)
-    let all_upper := keys.all (fun s => s.toUpper = s)
+    let all_lower := keys.all (fun s => s ≠ "" ∧ s.all Char.isLower)
+    let all_upper := keys.all (fun s => s ≠ "" ∧ s.all Char.isUpper)
     result = true ↔ all_lower || all_upper
 -- program termination
 ∃ result,
