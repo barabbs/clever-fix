@@ -19,7 +19,7 @@ def problem_spec
 (l: List Int) :=
 -- spec
 let spec (result: List Int) :=
-  (∀ x, x ∈ result ↔ x ∈ l ∧ result.count x = 1) ∧
+  (∀ x, x ∈ result ↔ x ∈ l) ∧ result.Nodup ∧
   List.Sorted Int.le result
 -- program termination
 ∃ result,
@@ -77,6 +77,5 @@ apply And.intro
 intro x
 apply Iff.intro
 intro h
-apply And.intro
 repeat sorry
 -- end_def correctness_proof
