@@ -28,6 +28,7 @@ let spec (result: Bool) :=
     Even b ∧
     Even c ∧
     Even d ∧
+    0 < a ∧ 0 < b ∧ 0 < c ∧ 0 < d ∧
     (a + b + c + d = n);
   result = true ↔ sum_exists
 -- program termination
