@@ -25,6 +25,7 @@ def problem_spec
 let numeric_characters := ["-", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "."]
 let is_valid_string :=
   s.length > 0 ∧
+  s.any Char.isDigit ∧
   s.count (".".get! 0) ≤ 1 ∧
   s.count ("-".get! 0) ≤ 1 ∧
   s.data.all (fun c => numeric_characters.contains (String.mk [c])) ∧
@@ -36,11 +37,11 @@ let spec (result : Option Int) := match result with
     let parts := s.split (fun c => c = '.')
     (parts.length = 1 → result = s.toInt!) ∧
     (parts.length = 2 →
-      let integer_part := parts.get! 0
+      let value : ℚ := (s.replace "." "").toInt! / 10 ^ (parts.get! 1).length
       let is_negative := s.data.head! = '-'
-      |((integer_part.toInt! - result) : ℚ)| ≤ 0.5 ∧
-      (is_negative → |((integer_part.toInt! - result) : ℚ)| = 0.5 → integer_part.toInt? < result) ∧
-      (¬is_negative → |((integer_part.toInt! - result) : ℚ)| = 0.5 → integer_part.toInt? > result)
+      |((value - result) : ℚ)| ≤ 0.5 ∧
+      (is_negative → |((value - result) : ℚ)| = 0.5 → result < value) ∧
+      (¬is_negative → |((value - result) : ℚ)| = 0.5 → result > value)
     )
   | none => ¬ is_valid_string
 -- program termination
