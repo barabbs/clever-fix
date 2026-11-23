@@ -21,7 +21,7 @@ def problem_spec
 (a h: Rat) :=
 -- spec
 let spec (result: Rat) :=
-  a = 0 → result = 0 ∧
+  (a = 0 → result = 0) ∧
   (a ≠ 0 → (2 * result) / a = h);
 -- -- program termination
 ∃ result, implementation a h = result ∧
