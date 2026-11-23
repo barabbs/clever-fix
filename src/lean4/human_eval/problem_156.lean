@@ -25,7 +25,7 @@ def problem_spec
 (num: Nat) :=
 -- spec
 let spec (result: String) :=
-1 ≤ num ∧ num ≤ 1000 ∧ (result.data.all (fun c => c.isLower)) →
+1 ≤ num ∧ num ≤ 1000 → (result.data.all (fun c => c.isLower)) ∧
 isValidRoman result ∧ romanToDecimal result = num
 -- program terminates
 ∃ result, impl num = result ∧
