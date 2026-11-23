@@ -24,7 +24,7 @@ def problem_spec
 -- spec
 let spec (result: List Int) :=
   result.length = xs.length - 1 ∧
-  result = (check_derivative xs.reverse).reverse
+  result = (check_derivative xs.reverse).reverse.tail
 -- program terminates
 ∃ result, impl xs = result ∧
 -- return value satisfies spec
