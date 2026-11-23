@@ -33,7 +33,7 @@ def problem_spec
 let strength (extension: String) :=
   let cap := (extension.toList.filter (fun c => c.isUpper)).length;
   let sm := (extension.toList.filter (fun c => c.isLower)).length;
-  cap - sm;
+  (cap : Int) - sm;
 -- spec
 let spec (result: String) :=
 let last_pos := result.revPosOf '.';
