@@ -31,8 +31,8 @@ let spec (result: Option (List String) × Option Nat) :=
   let ord := result.snd;
   0 < text.length →
   ¬ (words = none ∧ ord = none) ∧
-    (words = none ↔ ∀ ch, ch ∈ text.toList →  (ch = ',' ∨ ch = ' ')) ∧
-    (∀ num, ord = some num → (text.get! 0).toNat = num) ∧
+    (words = none ↔ ∀ ch, ch ∈ text.toList →  ¬(ch = ',' ∨ ch = ' ')) ∧
+    (∀ num, ord = some num → (text.toList.filter (fun c => c.isLower ∧ (c.toNat - 'a'.toNat) % 2 = 1)).length = num) ∧
     (∀ lst, words = some lst → ∀ i, i < lst.length →
       let str := lst.get! i;
       text.containsSubstr str) ∧
