@@ -59,7 +59,7 @@ let spec (result: List Nat) :=
   let n := grid.length;
   (∀ i, i < n → (grid.get! i).length = n) →
   (∀ i j, i < n → j < n ↔ ((grid.get! i).get! j) ∈ [1, n^2]) →
-  is_valid_path k result grid ∧ (∀ path, is_valid_path k path grid → lexographically_less result path);
+  is_valid_path k result grid ∧ (∀ path, path.length = k → is_valid_path k path grid → lexographically_less result path);
 -- program terminates
 ∃ result, impl grid k = result ∧
 -- return value satisfies spec
