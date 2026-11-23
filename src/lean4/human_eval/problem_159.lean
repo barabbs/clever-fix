@@ -44,9 +44,9 @@ def problem_spec
 let spec (result: List Nat) :=
 number ≤ 1000 → need ≤ 1000 → remaining ≤ 1000 →
 result.length = 2 ∧
-(need ≤ remaining → result[0]! - need = number ∧
+(need ≤ remaining → result[0]! = number + need ∧
 need = remaining - result[1]!) ∧
-(remaining < need → result[0]! - remaining = number ∧
+(remaining < need → result[0]! = number + remaining ∧
 result[1]! = 0);
 -- program terminates
 ∃ result, impl number need remaining = result ∧
