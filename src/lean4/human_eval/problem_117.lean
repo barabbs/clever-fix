@@ -37,7 +37,7 @@ let spec (result : List String) :=
     c ∉ ['A', 'E', 'I', 'O', 'U'] ∧
     c.isAlpha
   s.all (fun c => c = ' ' ∨ c.isAlpha) →
-  let words := s.splitOn " "
+  let words := (s.splitOn " ").filter (· ≠ "")
   (result = [] ↔ (s.length = 0 ∨ words.all (fun word => (word.data.filter (fun c => is_consonant c)).length ≠ n))) ∧
   (result.length > 0 →
     let first_word := result[0]!
