@@ -32,11 +32,11 @@ def problem_spec
 -- spec
 let spec (result: Bool) :=
 string.toList.all (fun x => x = '(' ∨ x = ')') →
-result = true ↔
+(result = true ↔
   ∃ x : String,
     is_subsequence x.toList string.toList ∧
     balanced_paren_non_computable x '(' ')' ∧
-    2 ≤ count_max_paren_depth x
+    2 ≤ count_max_paren_depth x)
 -- program termination
 ∃ result, impl string = result ∧
 -- return value satisfies spec
