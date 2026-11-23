@@ -25,7 +25,7 @@ def problem_spec
 -- spec
 let spec (result: List Nat) :=
   let has_even_digits(i: Nat): Bool :=
-    (List.filter (fun d => Even d) (Nat.digits 10 i)).length > 0;
+    i = 0 ∨ (List.filter (fun d => Even d) (Nat.digits 10 i)).length > 0;
   (List.Sorted Nat.le result) ∧
   (forall i, i ∈ result ↔ (i ∈ x ∧ !(has_even_digits i)))
 -- program termination
