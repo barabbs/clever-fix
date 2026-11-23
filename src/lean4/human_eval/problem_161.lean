@@ -34,7 +34,7 @@ let hasNoAlphabet := string.all (λ c => not (c.isAlpha));
 (hasNoAlphabet = false →
   ∀ i, i < string.length →
   let c := string.get! ⟨i⟩;
-  (c.isAlpha → ((c.isLower → c.toUpper = result.get! ⟨i⟩) ∨
+  (c.isAlpha → ((c.isLower → c.toUpper = result.get! ⟨i⟩) ∧
               (c.isUpper → c.toLower = result.get! ⟨i⟩))) ∧
   (¬ c.isAlpha → c = result.get! ⟨i⟩))
 -- program terminates
