@@ -29,6 +29,7 @@ let spec (result: String) :=
   4 < result.length ∧
   result.drop (result.length - 2) = "db" ∧
   result.take 2 = "db" ∧
+  (result.toList.drop 2).dropLast.dropLast.all (fun c => c = '0' ∨ c = '1') ∧
   let resultTrimmed := (result.toList.drop 2).dropLast.dropLast.map (fun c => c.toNat - '0'.toNat)
   decimal = Nat.ofDigits 2 resultTrimmed.reverse
 -- program termination
