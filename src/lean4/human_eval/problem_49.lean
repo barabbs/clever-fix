@@ -25,7 +25,7 @@ def problem_spec
 (n p: Nat) :=
 -- spec
 let spec (result: Nat) :=
-0 < p ∧
+0 < p →
 result < p ∧
 (∃ k : Nat, p * k + result = Nat.pow 2 n)
 -- program termination
