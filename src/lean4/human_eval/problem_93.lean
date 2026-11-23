@@ -32,11 +32,11 @@ let spec (result : String) :=
     let c' := result.data.get! i;
     match c with
     | 'a' | 'e' | 'i' | 'o' | 'u' | 'A' | 'E' | 'I' | 'O' | 'U' =>
-      c.isUpper → c'.val = c.toLower.val + 2 ∧
-      c.isLower → c'.val = c.toUpper.val + 2
+      (c.isUpper → c'.val = c.toLower.val + 2) ∧
+      (c.isLower → c'.val = c.toUpper.val + 2)
     | _ =>
-      c.isUpper → c' = c.toLower ∧
-      c.isLower → c' = c.toUpper)
+      (c.isUpper → c' = c.toLower) ∧
+      (c.isLower → c' = c.toUpper))
 -- program termination
 ∃ result,
   implementation s = result ∧
