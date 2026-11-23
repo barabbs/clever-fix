@@ -32,10 +32,10 @@ def problem_spec
 let spec (result : Std.HashMap Char Nat) :=
     let chars := s.splitOn " "
     chars.all (fun c => c.length = 1) ∧ s.all (fun c => c.isLower ∨ c = ' ') →
-    ∀ key ∈ result.keys,
+    (∀ key ∈ result.keys,
       (key.isLower ∧
       key ∈ s.data ∧
-      result.get! key = s.count key) ∧
+      result.get! key = s.count key)) ∧
     (∀ char ∈ s.data, char.isLower →
       ((∃ char2 ∈ s.data, char2.isLower ∧ char2 ≠ char ∧
       s.count char < s.count char2) ↔ char ∉ result.keys))
