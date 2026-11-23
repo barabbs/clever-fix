@@ -29,7 +29,7 @@ let spec (result : Nat) :=
   | some i =>
     let j := i + 1;
     let substring := s.drop j;
-    result = (if is_sentence_is_boredom substring then 1 else 0) + implementation substring
+    result = (if is_sentence_is_boredom (s.take i) then 1 else 0) + implementation substring
   | none =>
     result = if is_sentence_is_boredom s then 1 else 0
 -- program termination
