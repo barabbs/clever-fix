@@ -19,12 +19,12 @@ def problem_spec
 (lst: List Int) :=
 -- spec
 let spec (result : Int) :=
-  lst.length = 0 → result = 0 ∧
-  lst.length > 0 →
+  (lst.length = 0 → result = 0) ∧
+  (lst.length > 0 →
     if lst.length > 1 then
       result = (if Even lst[1]! then lst[1]! else 0) + implementation (lst.drop 2)
     else
-      result = (if Even lst[1]! then lst[1]! else 0)
+      result = (if Even lst[1]! then lst[1]! else 0))
 -- program termination
 ∃ result,
   implementation lst = result ∧
