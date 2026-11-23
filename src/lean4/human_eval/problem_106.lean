@@ -23,6 +23,7 @@ def problem_spec
 (n: Int) :=
 -- spec
 let spec (result: List Int) :=
+  0 ≤ n →
   (result.length = n) ∧
   (forall i: Nat, (1 ≤ i ∧ i ≤ n ∧ Even i) → (result[i-1]! = Nat.factorial i)) ∧
   (forall i: Nat, (1 ≤ i ∧ i ≤ n ∧ Odd i) → (result[i-1]! = (List.range (i+1)).sum))
