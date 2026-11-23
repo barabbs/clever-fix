@@ -32,7 +32,7 @@ def problem_spec
 -- spec
 let spec (result: List Int) :=
   0 < result.length ∧
-  result.length = n ∧
+  result.length = n + 1 ∧
   let i := result.length-1;
   (i = 0 → result[0]! = 1) ∧ -- base case
   (i = 1 → result[1]! = 3) ∧
