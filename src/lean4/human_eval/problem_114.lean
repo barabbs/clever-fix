@@ -22,10 +22,11 @@ def problem_spec
 (nums: List Int) :=
 -- spec
 let spec (result : Int) :=
-  (∀ subarray ∈ nums.sublists,
+  nums ≠ [] →
+  (∀ subarray, subarray <:+: nums →
     subarray.length > 0 →
     result ≤ subarray.sum) ∧
-  (∃ subarray ∈ nums.sublists,
+  (∃ subarray, subarray <:+: nums ∧
     subarray.length > 0 ∧
     result = subarray.sum)
 -- program termination
