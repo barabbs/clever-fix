@@ -21,14 +21,14 @@ def problem_spec
 (implementation: Nat → Nat → String)
 -- inputs
 (x shift: Nat) :=
-let isReverse (s: String) : Bool :=
+let isReverse (s t: String) : Bool :=
   let n := s.length;
-  ∀ i, i < n / 2 → s.get! ⟨i⟩ = s.get! ⟨n - 1 - i⟩;
+  ∀ i, i < n → s.get! ⟨i⟩ = t.get! ⟨n - 1 - i⟩;
 -- spec
 let spec (result: String) :=
 let x_str := Nat.repr x;
 result.length = x_str.length ∧
-(x_str.length < shift → isReverse x_str) ∧
+(x_str.length < shift → isReverse x_str result) ∧
 (shift ≤ x_str.length →
   x_str.take shift = result.drop (x_str.length - shift) ∧
   x_str.drop shift = result.take (x_str.length - shift));
