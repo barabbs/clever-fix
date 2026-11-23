@@ -28,7 +28,7 @@ let spec (result: List String) :=
   let digits: List String := ["One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine"];
   (forall s: String, (s ∈ result → s ∈ digits)) ∧
   (arr.length ≥ result.length) ∧
-  (forall x: Nat, ((x: Int) ∈ arr ∧ 1 ≤ x ∧ x ≤ 9) → (digits[x-1]! ∈ result)) ∧
+  (forall x: Nat, (1 ≤ x ∧ x ≤ 9) → (result.count digits[x-1]! = arr.count (x: Int))) ∧
   (List.Sorted Int.le (List.map (fun (s: String) => (List.idxOf s digits) + 1) result).reverse)
 -- program termination
 ∃ result, implementation arr = result ∧
