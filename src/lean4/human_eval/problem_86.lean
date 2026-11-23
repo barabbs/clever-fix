@@ -36,7 +36,7 @@ let spec (result : String) :=
     ((∀ j, j < words[i]!.length →
       (words[i]!.data[j]! ∈ s_words[i]!.data ∧
       s_words[i]!.data[j]! ∈ words[i]!.data ∧
-      words[i]!.data.count (words[i]!.data[j]!) = s_words[i]!.data.count (s_words[i]!.data[j]!))) ∧
+      words[i]!.data.count (words[i]!.data[j]!) = s_words[i]!.data.count (words[i]!.data[j]!))) ∧
     List.Sorted Nat.le (words[i]!.data.map (fun c => c.val.toNat)))
 -- program termination
 ∃ result,
