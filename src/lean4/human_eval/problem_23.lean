@@ -22,7 +22,7 @@ def problem_spec
 -- spec
 let spec (result: Nat) :=
 -- every character in the string is counted once
-result = 0 ↔ string.isEmpty ∧
+(result = 0 ↔ string.isEmpty) ∧
 (0 < result → result - 1 = implementation (string.drop 1))
 -- program termination
 ∃ result, implementation string = result ∧
