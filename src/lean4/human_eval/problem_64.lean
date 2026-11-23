@@ -29,6 +29,7 @@ let isY (c : Char) := c = 'y' ∨ c = 'Y'
 -- spec
 let spec (result: Nat) :=
 string.data.all (fun c => c.isAlpha) →
+if string.length = 0 then result = 0 else
 if string.length = 1 then
   result = if isVowel string.data[0]! ∨ isY string.data[0]! then 1 else 0
 else
