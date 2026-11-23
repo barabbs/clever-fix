@@ -28,7 +28,7 @@ let c := string.get! ⟨i⟩;
 ('A'.toNat ≤ c.toNat ∧ c.toNat ≤ 'Z'.toNat)
 -- spec
 let spec (result: String) :=
-isAlphabetic result ∧ isAlphabetic s ∧
+isAlphabetic s → isAlphabetic result ∧
 result.length = s.length ∧
 ∃ k : Nat, k < 26 ∧
 ∀ i : Nat, i < s.length →
