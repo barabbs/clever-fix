@@ -28,7 +28,7 @@ let abs_diff := |larger - smaller|;
 smaller ≤ larger ∧
 smaller ∈ numbers ∧
 larger ∈ numbers ∧
-(∀ x y, x ∈ numbers → y ∈ numbers → x ≠ y → abs_diff ≤ |x - y|) ∧
+(∀ x y, x ∈ numbers → y ∈ numbers.erase x → abs_diff ≤ |x - y|) ∧
 (smaller = larger → 2 ≤ (numbers.filter (fun z => z = smaller)).length));
 -- program termination
 ∃ result, implementation numbers = result ∧
