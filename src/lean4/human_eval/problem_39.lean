@@ -31,7 +31,7 @@ let spec (result: Nat) :=
   n > 0 →
     (∃ i, Nat.fib i = result ∧ Nat.Prime result ∧
       (∃! S : Finset Nat, S.card = n - 1 ∧
-      (∀ y ∈ S, (∃ k, y = Nat.fib k) ∧ y < result ∧ Nat.Prime y))
+      (∀ y, y ∈ S ↔ (∃ k, y = Nat.fib k) ∧ y < result ∧ Nat.Prime y))
     )
 -- program termination
 ∃ result, implementation n = result ∧
