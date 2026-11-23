@@ -26,7 +26,9 @@ let isUpper (c : Char) :=
   65 ≤ c.toNat ∧ c.toNat ≤ 90
 -- spec
 let spec (result: Nat) :=
-if string.length = 1 then
+if string.length = 0 then
+  result = 0
+else if string.length = 1 then
   result = if isUpper string.data[0]! then string.data[0]!.toNat else 0
 else
   result = (if isUpper string.data[0]! then string.data[0]!.toNat else 0) + implementation (string.drop 1);
