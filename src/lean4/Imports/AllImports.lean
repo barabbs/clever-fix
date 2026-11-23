@@ -510,7 +510,7 @@ def applyOp (x y : Int) : String → Option Int
   | "+"  => some (x + y)
   | "-"  => some (x - y)
   | "*"  => some (x * y)
-  | "//" => if y == 0 then none else some (x / y)
+  | "//" => some (x / y)
   | "**" =>
     if x < 0 then none
     else some (Int.ofNat ((Int.toNat x) ^ (Int.toNat y)))
