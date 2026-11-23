@@ -34,7 +34,7 @@ let spec (result: String) :=
       ∧ pref ≠ " "
       ∧ result = pref ++ impl s)
     ∨
-    (∃ pref s : String, text = pref ++ s ∧ pref ≠ "" ∧ (∀ ch, ch ∈ pref.toList → ch = ' ')
+    (∃ pref s : String, text = pref ++ s ∧ pref ≠ "" ∧ (∀ ch, ch ∈ pref.toList → ch = ' ') ∧ ¬ s.startsWith " "
       ∧ let k := pref.length;
         (k ≤ 2 → result = (String.replicate k '_') ++ (impl (text.drop k)))
       ∧ (2 < k → result = "-" ++ (impl (text.drop k)))) )
