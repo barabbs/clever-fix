@@ -31,6 +31,7 @@ def problem_spec
 (numbers: List Nat) :=
 -- spec
 let spec (result: List Nat) :=
+(result.length = 0 ∨ result.length = 2) ∧
 (result.length = 0 ↔ ∀ i, i < numbers.length → numbers[i]! % 2 = 1) ∧
 (result.length = 2 ↔ ∃ i, i < numbers.length ∧
   numbers[i]! % 2 = 0 ∧
