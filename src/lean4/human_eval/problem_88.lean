@@ -34,10 +34,10 @@ let spec (result : List Nat) :=
     result[i]! ∈ lst ∧
     lst[i]! ∈ result ∧
     result.count (lst[i]!) = lst.count (lst[i]!)) ∧
-  (lst.head! + lst.getLast!) ≡ 1 [MOD 2] →
-    result.Sorted Nat.le ∧
-  (lst.head! + lst.getLast!) ≡ 0 [MOD 2] →
-    result.Sorted (fun a b => a ≥ b)
+  ((lst.head! + lst.getLast!) ≡ 1 [MOD 2] →
+    result.Sorted Nat.le) ∧
+  ((lst.head! + lst.getLast!) ≡ 0 [MOD 2] →
+    result.Sorted (fun a b => a ≥ b))
 -- program termination
 ∃ result,
   implementation lst = result ∧
