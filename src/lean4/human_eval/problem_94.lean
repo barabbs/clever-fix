@@ -33,7 +33,7 @@ def problem_spec
 let spec (result : Nat) :=
   lst.any (fun num => Nat.Prime num) →
     result > 0 ∧ ∃ i, i < lst.length ∧ Prime (lst.get! i) ∧
-    (∀ j, j < lst.length ∧ Prime (lst.get! j) → lst.get! i ≤ lst.get! j) ∧
+    (∀ j, j < lst.length ∧ Prime (lst.get! j) → lst.get! j ≤ lst.get! i) ∧
     result = (Nat.digits 10 (lst.get! i)).sum
 -- program termination
 ∃ result,
