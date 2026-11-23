@@ -25,8 +25,8 @@ chars_in_result.length = string.length ∧
 (∀ i, i < chars_in_result.length →
   let c := chars_in_result.get! i;
   let c' := chars_in_string.get! i;
-  (c.isUpper → c'.isLower) ∧
-  (c.isLower → c'.isUpper) ∧
+  (c.isUpper → c' = c.toLower) ∧
+  (c.isLower → c' = c.toUpper) ∧
   ((¬ c.isUpper ∧ ¬ c.isLower) → c = c')
 );
 -- program termination
