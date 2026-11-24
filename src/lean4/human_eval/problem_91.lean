@@ -24,11 +24,11 @@ def problem_spec
 -- spec
 let spec (result : Nat) :=
   let is_sentence_is_boredom (s: String) : Bool :=
-    (s.startsWith "I " ∨ s.startsWith " I") ∧ '.' ∉ s.data ∧ '?' ∉ s.data ∧ '!' ∉ s.data
+    (s = "I" ∨ s.startsWith "I ") ∧ '.' ∉ s.data ∧ '?' ∉ s.data ∧ '!' ∉ s.data
   match s.data.findIdx? (λ c => c = '.' ∨ c = '?' ∨ c = '!') with
   | some i =>
     let j := i + 1;
-    let substring := s.drop j;
+    let substring := (s.drop j).trimLeft;
     result = (if is_sentence_is_boredom (s.take i) then 1 else 0) + implementation substring
   | none =>
     result = if is_sentence_is_boredom s then 1 else 0
