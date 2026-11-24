@@ -30,18 +30,19 @@ let spec (result: Option (List String) × Option Nat) :=
   let words := result.fst;
   let ord := result.snd;
   0 < text.length →
-  ¬ (words = none ∧ ord = none) ∧
+  (words = none ↔ ord ≠ none) ∧
     (words = none ↔ ∀ ch, ch ∈ text.toList →  ¬(ch = ',' ∨ ch = ' ')) ∧
     (∀ num, ord = some num → (text.toList.filter (fun c => c.isLower ∧ (c.toNat - 'a'.toNat) % 2 = 1)).length = num) ∧
     (∀ lst, words = some lst → ∀ i, i < lst.length →
       let str := lst.get! i;
       text.containsSubstr str) ∧
     (∀ lst, words = some lst →
-      let first := text.takeWhile (fun c => c ≠ ',' ∧ c ≠ ' ');
-      let nextImpl := impl (text.drop (first.length + 1));
-      let nextWords := nextImpl.fst;
-      (∃ nextLst, nextWords = some nextLst ∧
-        lst = [first] ++ nextLst))
+      let sep (c : Char) := c.isWhitespace ∨ (' ' ∉ text.toList ∧ c = ',');
+      (∀ w ∈ lst, w ≠ "" ∧ ∀ c ∈ w.toList, ¬ sep c) ∧
+      ∃ gaps : List String, gaps.length = lst.length + 1 ∧
+        (∀ g ∈ gaps, ∀ c ∈ g.toList, sep c) ∧
+        (∀ g ∈ gaps.tail.dropLast, g ≠ "") ∧
+        text = String.join (List.zipWith (· ++ ·) gaps (lst ++ [""])))
 -- program terminates
 ∃ result, impl text = result ∧
 -- return value satisfies spec
