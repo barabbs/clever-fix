@@ -400,12 +400,12 @@ problems:
   - 156
 sample_problems: []
 -/
-partial def validRepetition : List Char → Bool
+def validRepetition : List Char → Bool
 | [] => true
 | c :: rest =>
   let max := maxRepetitions c
   let count := countRepetitions rest c 1
-  count ≤ max ∧ validRepetition (rest.drop (count - 1))
+  count ≤ max ∧ validRepetition rest
 -- end_def helper_definitions
 
 -- start_def helper_definitions
@@ -424,10 +424,12 @@ def validSubtractiveOrder : List Char → Bool
   | v1, v2 =>
     if v1 < v2 then
       -- check if c1 and c2 form a legal subtractive pair
-      (c1, c2) ∈ validSubtractivePairs ∧ validSubtractiveOrder rest
+      (c1, c2) ∈ validSubtractivePairs ∧ (rest.take 1).all (fun c3 => romanCharToValue c3 < v1) ∧
+      validSubtractiveOrder rest
     else if v1 = 0 ∨ v2 = 0 then
       false
     else
+      (rest.take 1).all (fun c3 => v2 < romanCharToValue c3 → 10 * v2 ≤ v1) ∧
       validSubtractiveOrder (c2 :: rest)
 -- end_def helper_definitions
 
