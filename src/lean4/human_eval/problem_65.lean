@@ -30,8 +30,8 @@ let x_str := Nat.repr x;
 result.length = x_str.length ∧
 (x_str.length < shift → isReverse x_str result) ∧
 (shift ≤ x_str.length →
-  x_str.take shift = result.drop (x_str.length - shift) ∧
-  x_str.drop shift = result.take (x_str.length - shift));
+  result.take shift = x_str.drop (x_str.length - shift) ∧
+  result.drop shift = x_str.take (x_str.length - shift));
 -- program termination
 ∃ result, implementation x shift = result ∧
 spec result
