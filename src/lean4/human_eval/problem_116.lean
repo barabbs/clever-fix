@@ -27,7 +27,7 @@ let spec (result : List Nat) :=
   result.length = lst.length ∧
   (∀ i j : Nat, i < j → j < result.length →
     (Nat.digits 2 (result.get! i)).count 1 < (Nat.digits 2 (result.get! j)).count 1 ∨
-    ((Nat.digits 2 (result.get! i)).count 1 = (Nat.digits 2 (result.get! j)).count 1 ∧ result.get! i < result.get! j))
+    ((Nat.digits 2 (result.get! i)).count 1 = (Nat.digits 2 (result.get! j)).count 1 ∧ result.get! i ≤ result.get! j))
 -- program termination
 ∃ result,
   implementation lst = result ∧
