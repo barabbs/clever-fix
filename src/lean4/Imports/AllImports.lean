@@ -523,7 +523,7 @@ def applyOp (x y : Int) : String → Option Int
 /--
 name: evalArith_pass
 use: |
-  Noncomputable relational spec for a single step evaluation (any op, ignoring precedence).
+  Relational spec for a single operand (a number token).
 problems:
   - 160
 sample_problems: []
@@ -531,11 +531,6 @@ sample_problems: []
 inductive evalArith_pass : List String → Int → Prop
 | num {s : String} {n : Nat} (h : s.toNat! = n) :
     evalArith_pass [s] (Int.ofNat n)
-| binOp {ts1 ts2 : List String} {op : String} {r1 r2 r : Int}
-    (h1 : evalArith_pass ts1 r1)
-    (h2 : evalArith_pass ts2 r2)
-    (hop : applyOp r1 r2 op = some r) :
-    evalArith_pass (ts1 ++ op :: ts2) r
 -- end_def helper_definitions
 
 -- start_def helper_definitions
@@ -549,7 +544,7 @@ sample_problems: []
 -/
 inductive evalArith_exp : List String → Int → Prop
 | of_pass {ts r} (h : evalArith_pass ts r) : evalArith_exp ts r
-| step {ts1 ts2 r1 r2 r} (h1 : evalArith_exp ts1 r1) (h2 : evalArith_exp ts2 r2)
+| step {ts1 ts2 r1 r2 r} (h1 : evalArith_pass ts1 r1) (h2 : evalArith_exp ts2 r2)
     (hop : applyOp r1 r2 "**" = some r) :
     evalArith_exp (ts1 ++ "**" :: ts2) r
 -- end_def helper_definitions
@@ -565,9 +560,9 @@ sample_problems: []
 -/
 inductive evalArith_mul : List String → Int → Prop
 | of_exp {ts r} (h : evalArith_exp ts r) : evalArith_mul ts r
-| step {ts1 ts2 r1 r2 r} (h1 : evalArith_mul ts1 r1) (h2 : evalArith_mul ts2 r2)
-    (hop : applyOp r1 r2 "*" = some r ∨ applyOp r1 r2 "//" = some r) :
-    evalArith_mul (ts1 ++ "*" :: ts2) r
+| step {ts1 ts2 r1 r2 r op} (h1 : evalArith_mul ts1 r1) (h2 : evalArith_exp ts2 r2)
+    (hop : (op = "*" ∨ op = "//") ∧ applyOp r1 r2 op = some r) :
+    evalArith_mul (ts1 ++ op :: ts2) r
 -- end_def helper_definitions
 
 -- start_def helper_definitions
@@ -581,9 +576,9 @@ sample_problems: []
 -/
 inductive evalArith_add : List String → Int → Prop
 | of_mul {ts r} (h : evalArith_mul ts r) : evalArith_add ts r
-| step {ts1 ts2 r1 r2 r} (h1 : evalArith_add ts1 r1) (h2 : evalArith_add ts2 r2)
-    (hop : applyOp r1 r2 "+" = some r ∨ applyOp r1 r2 "-" = some r) :
-    evalArith_add (ts1 ++ "+" :: ts2) r
+| step {ts1 ts2 r1 r2 r op} (h1 : evalArith_add ts1 r1) (h2 : evalArith_mul ts2 r2)
+    (hop : (op = "+" ∨ op = "-") ∧ applyOp r1 r2 op = some r) :
+    evalArith_add (ts1 ++ op :: ts2) r
 -- end_def helper_definitions
 
 -- start_def helper_definitions
