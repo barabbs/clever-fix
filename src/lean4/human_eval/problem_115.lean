@@ -40,7 +40,7 @@ let spec (result : Nat) :=
   (grid.length = 0 → result = 0) ∧
   (grid.length > 0 →
     let well_water_count := grid.head!.sum;
-    result - (well_water_count / capacity) - (if well_water_count % capacity > 0 then 1 else 0) = implementation grid.tail! capacity)
+    result = (well_water_count / capacity) + (if well_water_count % capacity > 0 then 1 else 0) + implementation grid.tail! capacity)
 -- program termination
 ∃ result,
   implementation grid capacity = result ∧
