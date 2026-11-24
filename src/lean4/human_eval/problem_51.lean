@@ -32,7 +32,8 @@ let is_consonant (c: Char): Bool :=
 let spec (result: String) :=
 result.all (λ c => is_consonant c) ∧ result.length ≤ string.length ∧
 (∀ c, result.contains c → string.contains c) ∧
-∀ c , string.contains c ∧ is_consonant c → (result.contains c);
+result.toList.Sublist string.toList ∧
+∀ c , is_consonant c → result.toList.count c = string.toList.count c;
 -- program termination
 ∃ result, implementation string = result ∧
 spec result
