@@ -33,10 +33,10 @@ let hasNoAlphabet := string.all (λ c => not (c.isAlpha));
   result.toList = string.toList.reverse) ∧
 (hasNoAlphabet = false →
   ∀ i, i < string.length →
-  let c := string.get! ⟨i⟩;
-  (c.isAlpha → ((c.isLower → c.toUpper = result.get! ⟨i⟩) ∧
-              (c.isUpper → c.toLower = result.get! ⟨i⟩))) ∧
-  (¬ c.isAlpha → c = result.get! ⟨i⟩))
+  let c := string.toList[i]!;
+  (c.isAlpha → ((c.isLower → c.toUpper = result.toList[i]!) ∧
+              (c.isUpper → c.toLower = result.toList[i]!))) ∧
+  (¬ c.isAlpha → c = result.toList[i]!))
 -- program terminates
 ∃ result, impl string = result ∧
 -- return value satisfies spec
