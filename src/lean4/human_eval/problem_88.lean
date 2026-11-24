@@ -28,7 +28,6 @@ def problem_spec
 (lst: List Nat) :=
 -- spec
 let spec (result : List Nat) :=
-  lst.length > 0 →
   result.length = lst.length ∧
   (∀ i, i < result.length →
     result[i]! ∈ lst ∧
