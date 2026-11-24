@@ -30,8 +30,8 @@ def problem_spec
 (n : Nat) :=
 -- spec
 let spec (result: Nat) :=
-(∃ x y : Nat, String.join [x.repr, " apples and ", y.repr, " oranges"] = string) →
-∃ x y : Nat, x + y = n - result
+(∃ x y : Nat, x + y ≤ n ∧ String.join [x.repr, " apples and ", y.repr, " oranges"] = string) →
+∃ x y : Nat, x + y + result = n
 ∧ (String.join [x.repr, " apples and ", y.repr, " oranges"] = string)
 -- program termination
 ∃ result, implementation string n = result ∧
