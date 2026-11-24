@@ -28,14 +28,12 @@ let spec (result: Rat) :=
   let min_more_eq := more_eq.min?;
   let less_eq_count := less_eq.length;
   let more_eq_count := more_eq.length;
-  let eq_count := (numbers.filter (fun x => x = result)).length;
-  (less_eq_count + more_eq_count - eq_count = numbers.length →
-  numbers.length ≤ 2 * less_eq_count →
+  (numbers.length ≤ 2 * less_eq_count ∧
   numbers.length ≤ 2 * more_eq_count) ∧
   ((numbers.length % 2 = 1 →
     result ∈ numbers) ∧
-    (numbers.length % 2 = 0 → max_less_eq.isSome ∧
-    min_more_eq.isSome ∧
+    (numbers.length % 2 = 0 →
+    (result ∈ numbers → numbers.length < 2 * less_eq_count ∧ numbers.length < 2 * more_eq_count) ∧
     2 * result = max_less_eq.get! + min_more_eq.get!));
 -- program termination
 ∃ result, implementation numbers = result ∧
