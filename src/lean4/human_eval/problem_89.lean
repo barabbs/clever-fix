@@ -28,7 +28,8 @@ def problem_spec
 (str: String) :=
 -- spec
 let spec (result : String) :=
-  result.data.all (fun c => c.isLower) →
+  str.data.all (fun c => c.isLower) →
+  result.data.all (fun c => c.isLower) ∧
   result.length = str.length ∧
   (∀ i, i < str.length →
     let c := str.data[i]!
