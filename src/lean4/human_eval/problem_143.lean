@@ -37,8 +37,8 @@ let result_words := if result = "" then [] else result.splitOn;
   (∀ word ∈ result_words, word ∈ words ∧ Nat.Prime word.length) ∧
   match result_words with
   | [] => ∀ word ∈ words, ¬(Nat.Prime word.length)
-  | head :: tail => if Nat.Prime head.length ∧ head = words[0]! then String.join tail = impl (String.join (words.drop 1))
-    else result = impl (String.join (words.drop 1))
+  | head :: tail => if Nat.Prime head.length ∧ head = words[0]! then String.intercalate " " tail = impl (String.intercalate " " (words.drop 1))
+    else ¬ Nat.Prime (words[0]!).length ∧ result = impl (String.intercalate " " (words.drop 1))
 -- program termination
 ∃ result, impl sentence = result ∧
 -- return value satisfies spec
