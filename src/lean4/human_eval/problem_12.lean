@@ -27,7 +27,7 @@ let spec (result: Option String) :=
   (result = none ↔ strings.length = 0) ∧
   (strings ≠ [] → ∃ longest, result = some longest ∧
   longest ∈ strings ∧
-  ∀ s, s ∈ strings → s.length ≤ longest.length →
+  (∀ s, s ∈ strings → s.length ≤ longest.length) ∧
   (∃ i, i < strings.length ∧
   strings[i]! = longest ∧ ∀ j < i, strings[j]!.length < longest.length));
 -- program termination
