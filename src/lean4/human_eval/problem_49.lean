@@ -11,7 +11,7 @@ test_cases:
   - input: [1101, 101]
     expected_output: 2
   - input: [0, 101]
-    expected_output: 0
+    expected_output: 1
   - input: [100, 101]
     expected_output: 1
 -/
