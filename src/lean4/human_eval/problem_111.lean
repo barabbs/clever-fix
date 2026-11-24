@@ -31,7 +31,7 @@ def problem_spec
 -- spec
 let spec (result : Std.HashMap Char Nat) :=
     let chars := s.splitOn " "
-    chars.all (fun c => c.length = 1) ∧ s.all (fun c => c.isLower ∨ c = ' ') →
+    (s = "" ∨ chars.all (fun c => c.length = 1)) ∧ s.all (fun c => c.isLower ∨ c = ' ') →
     (∀ key ∈ result.keys,
       (key.isLower ∧
       key ∈ s.data ∧
