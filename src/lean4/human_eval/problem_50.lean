@@ -30,10 +30,10 @@ let c := string.get! ⟨i⟩;
 let spec (result: String) :=
 isAlphabetic s → isAlphabetic result ∧
 result.length = s.length ∧
-∃ k : Nat, k < 26 ∧
 ∀ i : Nat, i < s.length →
-((s.get! ⟨i⟩).toNat + k) % 26 = (result.get! ⟨i⟩).toNat
-→ k = 5
+let c := s.get! ⟨i⟩;
+let a := if c.isUpper then 'A'.toNat else 'a'.toNat;
+(c.toNat - a + 5) % 26 + a = (result.get! ⟨i⟩).toNat
 -- program termination
 ∃ result, implementation s = result ∧
 spec result
