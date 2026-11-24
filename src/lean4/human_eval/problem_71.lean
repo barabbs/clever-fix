@@ -28,6 +28,7 @@ let spec (result : Rat) :=
   let s :=
     (a + b + c) / 2;
   if is_valid_triangle then
+    (∃ k : Int, result = k / 100) ∧
     0 ≤ result ∧ (max (result - 1/200) 0)^2 ≤ s * (s-a) * (s-b) * (s-c) ∧
     s * (s-a) * (s-b) * (s-c) ≤ (result + 1/200)^2
   else
